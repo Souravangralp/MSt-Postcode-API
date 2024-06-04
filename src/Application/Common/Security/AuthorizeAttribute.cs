@@ -1,4 +1,4 @@
-﻿namespace ProductMatrix.Application.Common.Security;
+﻿namespace MSt_Postcode_API.Application.Common.Security;
 
 /// <summary>
 /// Specifies the class this attribute is applied to requires authorization.

@@ -1,14 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <RootNamespace>ProductMatrix.Application.UnitTests</RootNamespace>
-        <AssemblyName>ProductMatrix.Application.UnitTests</AssemblyName>
+        <RootNamespace>MSt_Postcode_API.Application.UnitTests</RootNamespace>
+        <AssemblyName>MSt_Postcode_API.Application.UnitTests</AssemblyName>
     </PropertyGroup>
-
-    <ItemGroup>
-      <Compile Remove="Common\Behaviours\RequestLoggerTests.cs" />
-      <Compile Remove="Common\Mappings\MappingTests.cs" />
-    </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="Microsoft.NET.Test.Sdk" />
@@ -30,7 +25,6 @@
 
     <ItemGroup>
       <Folder Include="Common\Behaviours\" />
-      <Folder Include="Common\Mappings\" />
     </ItemGroup>
 
 </Project>

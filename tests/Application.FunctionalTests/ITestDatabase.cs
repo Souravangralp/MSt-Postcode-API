@@ -1,6 +1,6 @@
 ﻿using System.Data.Common;
 
-namespace ProductMatrix.Application.FunctionalTests;
+namespace MSt_Postcode_API.Application.FunctionalTests;
 
 public interface ITestDatabase
 {

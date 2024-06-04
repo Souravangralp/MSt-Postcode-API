@@ -1,8 +1,6 @@
 ﻿using Azure.Identity;
-using ProductMatrix.Application.Common.Interfaces;
-using ProductMatrix.Infrastructure.Data;
-using ProductMatrix.Web.Services;
-
+using Microsoft.AspNetCore.Mvc;
+using MSt_Postcode_API.Infrastructure.Data;
 using NSwag;
 using NSwag.Generation.Processors.Security;
 
@@ -13,8 +11,6 @@ public static class DependencyInjection
     public static IServiceCollection AddWebServices(this IServiceCollection services)
     {
         services.AddDatabaseDeveloperPageExceptionFilter();
-
-        services.AddScoped<IUser, CurrentUser>();
 
         services.AddHttpContextAccessor();
 
@@ -33,7 +29,7 @@ public static class DependencyInjection
 
         services.AddOpenApiDocument((configure, sp) =>
         {
-            configure.Title = "ProductMatrix API";
+            configure.Title = "MSt_Postcode_API API";
 
             // Add JWT
             configure.AddSecurity("JWT", Enumerable.Empty<string>(), new OpenApiSecurityScheme

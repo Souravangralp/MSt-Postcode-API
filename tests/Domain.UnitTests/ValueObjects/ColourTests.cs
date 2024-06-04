@@ -1,9 +1,9 @@
-﻿using ProductMatrix.Domain.Exceptions;
-using ProductMatrix.Domain.ValueObjects;
+﻿using MSt_Postcode_API.Domain.Exceptions;
+using MSt_Postcode_API.Domain.ValueObjects;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace ProductMatrix.Domain.UnitTests.ValueObjects;
+namespace MSt_Postcode_API.Domain.UnitTests.ValueObjects;
 
 public class ColourTests
 {

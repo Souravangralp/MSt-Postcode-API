@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <RootNamespace>ProductMatrix.Domain.UnitTests</RootNamespace>
-        <AssemblyName>ProductMatrix.Domain.UnitTests</AssemblyName>
+        <RootNamespace>MSt_Postcode_API.Domain.UnitTests</RootNamespace>
+        <AssemblyName>MSt_Postcode_API.Domain.UnitTests</AssemblyName>
     </PropertyGroup>
 
     <ItemGroup>

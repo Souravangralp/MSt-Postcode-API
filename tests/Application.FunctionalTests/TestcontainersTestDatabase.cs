@@ -1,11 +1,11 @@
 ﻿using System.Data.Common;
-using ProductMatrix.Infrastructure.Data;
+using MSt_Postcode_API.Infrastructure.Data;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Respawn;
 using Testcontainers.MsSql;
 
-namespace ProductMatrix.Application.FunctionalTests;
+namespace MSt_Postcode_API.Application.FunctionalTests;
 
 public class TestcontainersTestDatabase : ITestDatabase
 {

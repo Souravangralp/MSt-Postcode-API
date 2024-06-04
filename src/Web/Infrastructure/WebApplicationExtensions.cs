@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace ProductMatrix.Web.Infrastructure;
+namespace MSt_Postcode_API.Web.Infrastructure;
 
 public static class WebApplicationExtensions
 {
@@ -9,7 +9,7 @@ public static class WebApplicationExtensions
         var groupName = group.GetType().Name;
 
         return app
-            .MapGroup($"/{groupName.ToLower()}")
+            .MapGroup($"/api/{groupName}")
             .WithGroupName(groupName)
             .WithTags(groupName)
             .WithOpenApi();

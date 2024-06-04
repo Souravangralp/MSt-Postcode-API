@@ -1,4 +1,9 @@
-﻿namespace ProductMatrix.Infrastructure.Data.Interceptors;
+﻿using MediatR;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
+using MSt_Postcode_API.Domain.Common;
+
+namespace MSt_Postcode_API.Infrastructure.Data.Interceptors;
 
 public class DispatchDomainEventsInterceptor : SaveChangesInterceptor
 {

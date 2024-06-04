@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ProductMatrix.Domain.Common;
+namespace MSt_Postcode_API.Domain.Common;
 
 public abstract class BaseEntity
 {

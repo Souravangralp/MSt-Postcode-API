@@ -1,7 +1,13 @@
-﻿using ProductMatrix.Domain;
-using static ProductMatrix.Domain.Constants.Worksheet;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using MSt_Postcode_API.Application.Common.Interfaces;
+using MSt_Postcode_API.Domain.Constants;
+using MSt_Postcode_API.Domain.Entities;
+using MSt_Postcode_API.Domain.Entities.Generals;
 
-namespace ProductMatrix.Infrastructure.Data;
+namespace MSt_Postcode_API.Infrastructure.Data;
 
 public static class InitialiserExtensions
 {
@@ -23,11 +29,8 @@ public class ApplicationDbContextInitialiser
 
     private readonly ILogger<ApplicationDbContextInitialiser> _logger;
     private readonly ApplicationDbContext _context;
-    //private readonly UserManager<ApplicationUser> _userManager;
-    //private readonly RoleManager<IdentityRole> _roleManager;
-    private readonly IReadExcelService _readExcelService;
-    private readonly IPostcodeService _postcodeService;
-    private readonly ISuburbService _suburbService;
+    private readonly ISeedPostcodeSuburbService _seedPostcodeSuburbService;
+    private readonly ISeedPostcodeClassificationService _seedPostcodeClassificationService;
     private readonly IExcelFileService _excelFileService;
 
     #endregion
@@ -36,20 +39,14 @@ public class ApplicationDbContextInitialiser
 
     public ApplicationDbContextInitialiser(ILogger<ApplicationDbContextInitialiser> logger,
         ApplicationDbContext context,
-        //UserManager<ApplicationUser> userManager,
-        //RoleManager<IdentityRole> roleManager,
-        IReadExcelService readExcelService,
-        IPostcodeService postcodeService,
-        ISuburbService suburbService,
+        ISeedPostcodeSuburbService seedPostcodeSuburbService,
+        ISeedPostcodeClassificationService seedPostcodeClassificationService,
         IExcelFileService excelFileService)
     {
         _logger = logger;
         _context = context;
-        //_userManager = userManager;
-        //_roleManager = roleManager;
-        _readExcelService = readExcelService;
-        _postcodeService = postcodeService;
-        _suburbService = suburbService;
+        _seedPostcodeSuburbService = seedPostcodeSuburbService;
+        _seedPostcodeClassificationService = seedPostcodeClassificationService;
         _excelFileService = excelFileService;
     }
 
@@ -61,7 +58,7 @@ public class ApplicationDbContextInitialiser
     {
         try
         {
-            if (_context.Database.IsSqlServer()) { await _context.Database.MigrateAsync(); }
+            await _context.Database.MigrateAsync();
         }
         catch (Exception ex)
         {
@@ -74,161 +71,7 @@ public class ApplicationDbContextInitialiser
     {
         try
         {
-            #region seed general look ups
-
-            await SeedExcel<GeneralLookUp>(ExcelFile.GeneralLookUp.FileName, Worksheet.GeneralLookUps.GeneralLookUp);
-
-            #endregion
-
-            #region seed from Json
-
-            await SeedJson<DocType>();
-
-            await SeedJson<CategoryType>();
-
-            await SeedJson<ProductCategory>();
-
-            await SeedJson<LoanToValueRatio>();
-
-            await SeedJson<State>();
-
-            await SeedJson<VacantLandCategory>();
-
-            await SeedJson<RelocationServicing>();
-
-            await SeedJson<CouncilZoningCategory>();
-
-            await SeedJson<DefaultSetting>();
-
-            await SeedJson<BorrowingEntityType>();
-
-            await SeedJson<SelfEmployedClassification>();
-
-            await SeedJson<OtherIncomeType>();
-
-            await SeedJson<ConstructionType>();
-
-            await SeedJson<BuilderType>();
-
-            await SeedJson<CashOutType>();
-
-            await SeedJson<BusinessFinanceType>();
-
-            await SeedJson<RenovationType>();
-
-            await SeedJson<RulesFilter>();
-
-            #endregion
-
-            #region seed from Excel
-
-            #region Product classifications
-
-            await SeedExcel<EmploymentClassification>(ExcelFile.ProductClassification.FileName, ProductClassification.EmploymentClassification);
-
-            await SeedExcel<PostcodeClassification>(ExcelFile.Postcode.FileName, Worksheet.Postcode.PostcodeClassification);
-
-            await SeedExcel<LandSizeClassification>(ExcelFile.ProductClassification.FileName, Worksheet.ProductClassification.LandSizeClassification);
-
-            await SeedExcel<ApplicationObjectiveClassification>(ExcelFile.ProductClassification.FileName, Worksheet.ProductClassification.ApplicationObjective);
-
-            #endregion
-
-            await SeedExcel<Product>(ExcelFile.Products.FileName, Worksheet.Products.Product);
-
-            await SeedPostcodes();
-
-            await SeedExcel<PostcodeSpecificationMapper>(ExcelFile.ProductClassification.FileName, ProductClassification.PostCodeScenarioBuilder);
-
-            await SeedPostcodeClassificationMapper();
-
-            await SeedExcel<ProductFeeLVRRate>(ExcelFile.BaseFeesWithScenario.FileName, ProductMatric.ProductFeeLVRRate); //---> BaseIncrementPercent
-
-            await SeedExcel<LandSize>(ExcelFile.BaseFeesWithScenario.FileName, ProductMatric.LandSizes); //---> LandSize
-
-            await AdditionalFee();
-
-            await ScenarioBuilder();
-
-            await DefaultFee();
-
-            await AdditionalFeeDocTypeVariations();
-
-            await SeedProductCatalogue();
-
-            #region ProductSelector
-
-            await SeedExcel<PostcodeProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.PostcodeProductSelector);
-
-            await SeedExcel<DwellingsProductSelector>(ExcelFile.Postcode.FileName, ProductSelector.DwellingsProductSelectors);
-
-            await SeedExcel<DocTypeProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.DocTypeProductSelector);
-
-            await SeedExcel<BorrowingEntityProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.BorrowingEntityProductSelector);
-
-            await SeedExcel<LoanAmountProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.LoanAmountProductSelectors);
-
-            await SeedExcel<LvrProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.LvrProductSelectors);
-
-            await SeedExcel<SecurityTypeProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.SecurityTypeProductSelector);
-
-            await SeedExcel<RepaymentTypeProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.RepaymentTypeProductSelectors);
-
-            await SeedExcel<NaturalPersonAgeProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.NaturalPersonAgeProductSelector);
-
-            await SeedExcel<NumeralClassification>(ExcelFile.NumeralClassification.FileName, NumeralClassifications.NumeralSelector);
-
-            await SeedExcel<PurchaseTypeProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.PurchaseTypeProductSelector);
-
-            await SeedExcel<EmploymentClassificationProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.EmploymentProductSelector);
-
-            await SeedExcel<SelfEmployedClassificationProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.SelfEmployedProductSelector);
-
-            await SeedExcel<EmployerClassificationProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.EmployerClassificationProductSelector);
-
-            await SeedExcel<ZoningTypeProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.ZoiningTypeProductSelector);
-
-            await SeedExcel<OtherIncomeTypeProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.OtherIncomeTypeProductSelector);
-
-            await SeedExcel<PotentialImpactfulConsiderationProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.PotentialImpactfulProductSelector);
-
-            await SeedExcel<AgeCreditReportProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.AgeCreditProductSelector);
-
-            await SeedExcel<ConstructionProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.ConstructionTypeProductSelector);
-
-            await SeedExcel<CashOutProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.CashOutProductSelector);
-
-            await SeedExcel<UnitsApartmentProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.UnitsApartmentProductSelector);
-
-            await SeedExcel<FacilityTypeProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.FacilityTypeProductSelectors);
-
-            await SeedExcel<GuidedByTypeProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.GuidedByTypeProductSelector);
-
-            await SeedExcel<HeedFullPointTypeProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.HeedFullPointProductSelector);
-
-            await SeedExcel<TitleTypeProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.TitleTypeProductSelector);
-
-            await SeedExcel<ServiceTypeProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.ServiceTypeProductSelector);
-
-            await SeedExcel<UsageTypeProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.UsageTypeProductSelector);
-
-            await SeedExcel<LandSizeProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.LandSizeProductSelector);
-
-            await SeedExcel<ButtonTypeProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.ButtonTypeProductSelector);
-
-            await SeedExcel<ApplicationObjectiveProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.ApplicationObjectiveProductSelector);
-
-            await SeedExcel<MaritalStatusProductSelector>(ExcelFile.ProductSelector.FileName, ProductSelector.MaritalStatusProductSelectors);
-
-            #endregion
-
-            #region Postcode suburb mapper
-
-            await SeedPostcodeSourceData();
-
-            #endregion
-
-            #endregion
+            await TrySeedAsync();
         }
         catch (Exception ex)
         {
@@ -237,13 +80,34 @@ public class ApplicationDbContextInitialiser
         }
     }
 
+    public async Task TrySeedAsync()
+    {
+        await SeedExcel<GeneralLookup>(ExcelFile.Postcode.FileName, ExcelSheetName.GeneralLookUps.SheetName);
+
+        await _excelFileService.SeedJson<State>();
+
+        await SeedPostcodes();
+
+        await SeedSuburb();
+
+        await SeedPostcodesSuburbMapper();
+
+        await SeedExcel<PostcodeClassification>(ExcelFile.Postcode.FileName, ExcelSheetName.PostcodeClassifications.SheetName);
+
+        await SeedPostcodesClassificationMapper();
+    }
+
+    #endregion
+
     #region Helpers
 
-    private async Task SeedPostcodes()
+    #region Postcode
+
+    public async Task SeedPostcodes()
     {
         if (!_context.Postcodes.Any())
         {
-            var postcodes = await _readExcelService.GetPostcodes();
+            var postcodes = await _seedPostcodeSuburbService.GetPostcodes();
 
             await _context.Postcodes.AddRangeAsync(postcodes);
 
@@ -251,11 +115,35 @@ public class ApplicationDbContextInitialiser
         }
     }
 
-    private async Task SeedPostcodeClassificationMapper()
+    public async Task SeedSuburb()
+    {
+        if (!_context.Suburbs.Any())
+        {
+            var suburbs = await _seedPostcodeSuburbService.GetSuburbs(ExcelFile.Postcode.FileName, ExcelSheetName.Suburbs.SheetName);
+
+            await _context.Suburbs.AddRangeAsync(suburbs);
+
+            await _context.SaveChangesAsync();
+        }
+    }
+
+    public async Task SeedPostcodesSuburbMapper()
+    {
+        if (!_context.PostcodeSuburbMapper.Any())
+        {
+            var postcodeSuburbMapper = await _seedPostcodeSuburbService.GetPostcodeSuburbMapper(ExcelFile.Postcode.FileName, ExcelSheetName.Suburbs.SheetName);
+
+            await _context.PostcodeSuburbMapper.AddRangeAsync(postcodeSuburbMapper);
+
+            await _context.SaveChangesAsync();
+        }
+    }
+
+    public async Task SeedPostcodesClassificationMapper()
     {
         if (!_context.PostcodeClassificationMapper.Any())
         {
-            var postcodeClassificationMapper = await _postcodeService.GetPostcodeClassificationMapper();
+            var postcodeClassificationMapper = await _seedPostcodeClassificationService.GetAll(ExcelFile.Postcode.FileName, ExcelSheetName.PostcodeClassificationMapper.SheetName);
 
             await _context.PostcodeClassificationMapper.AddRangeAsync(postcodeClassificationMapper);
 
@@ -263,111 +151,7 @@ public class ApplicationDbContextInitialiser
         }
     }
 
-    private async Task AdditionalFee()
-    {
-        if (!_context.AdditionalFees.Any())
-        {
-            var additionFees = await _readExcelService.GetAdditionalFee();
-
-            await _context.AdditionalFees.AddRangeAsync(additionFees);
-
-            await _context.SaveChangesAsync();
-        }
-    }
-
-    private async Task ScenarioBuilder()
-    {
-        if (!_context.ScenarioBuilders.Any())
-        {
-            var scenarioBuilder = await _readExcelService.GetScenarioBuilder();
-
-            await _context.ScenarioBuilders.AddRangeAsync(scenarioBuilder);
-
-            await _context.SaveChangesAsync();
-        }
-    }
-
-    private async Task DefaultFee()
-    {
-        if (!_context.DefaultFees.Any())
-        {
-            var defaultFees = await _readExcelService.GetDefaultFee();
-
-            await _context.DefaultFees.AddRangeAsync(defaultFees);
-
-            await _context.SaveChangesAsync();
-        }
-    }
-
-    private async Task AdditionalFeeDocTypeVariations()
-    {
-        if (!_context.AdditionalFeeDocTypeVariations.Any())
-        {
-            var additionalFeeDocTypeVariations = await _readExcelService.GetAdditionalFeeDocTypeVariations();
-
-            await _context.AdditionalFeeDocTypeVariations.AddRangeAsync(additionalFeeDocTypeVariations);
-
-            await _context.SaveChangesAsync();
-        }
-    }
-
-    private async Task SeedProductCatalogue()
-    {
-        if (!_context.ProductCatalogues.Any())
-        {
-            var productCatalogues = await _readExcelService.GetProductCatalogue();
-
-            await _context.ProductCatalogues.AddRangeAsync(productCatalogues);
-
-            await _context.SaveChangesAsync();
-        }
-    }
-
-    private async Task SeedNumeralClassification()
-    {
-        if (!_context.NumeralClassifications.Any())
-        {
-            var numeralClassifications = await _readExcelService.GetNumeralClassification();
-
-            await _context.NumeralClassifications.AddRangeAsync(numeralClassifications);
-
-            await _context.SaveChangesAsync();
-        }
-    }
-
-    private async Task SeedPostcodeSourceData()
-    {
-        if (!_context.Suburbs.Any())
-        {
-            var postcodeSourceData = await _readExcelService.GetPostcodeDetails();
-
-            await _suburbService.GetSuburbDetails(postcodeSourceData);
-        }
-    }
-
-    /// <summary>
-    /// This method is being used to seed data from a json file to db.
-    /// </summary>
-    /// <typeparam name="TEntity"></typeparam>
-    private async Task SeedJson<TEntity>() where TEntity : class
-    {
-        if (!_context.Set<TEntity>().Any())
-        {
-            var jsonString = FilesUtility.GetJsonPath<TEntity>();
-
-            if (!string.IsNullOrWhiteSpace(jsonString))
-            {
-                var data = JsonConvert.DeserializeObject<List<TEntity>>(jsonString);
-
-                if (data is not null && data.Count != 0)
-                {
-                    _context.Set<TEntity>().AddRange(data);
-
-                    await _context.SaveChangesAsync();
-                }
-            }
-        }
-    }
+    #endregion
 
     /// <summary>
     /// This method is used to seed data from excel sheet based on given sheet
@@ -422,8 +206,6 @@ public class ApplicationDbContextInitialiser
         }
 
     }
-
-    #endregion
 
     #endregion
 }

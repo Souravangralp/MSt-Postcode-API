@@ -1,10 +1,14 @@
-﻿//using ProductMatrix.Infrastructure.Identity;
+﻿using System.Reflection;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
-using ProductMatrix.Infrastructure.Data;
-using ProductMatrix.Infrastructure.Data.Interceptors;
-using ProductMatrix.Infrastructure.Services;
+using Microsoft.Extensions.DependencyInjection;
+using MSt_Postcode_API.Application.Common.Interfaces;
+using MSt_Postcode_API.Infrastructure.Data;
+using MSt_Postcode_API.Infrastructure.Data.Interceptors;
 
-namespace Microsoft.Extensions.DependencyInjection;
+namespace MSt_Postcode_API.Infrastructure;
 
 public static class DependencyInjection
 {
@@ -16,7 +20,6 @@ public static class DependencyInjection
 
         services.AddScoped<ISaveChangesInterceptor, AuditableEntityInterceptor>();
         services.AddScoped<ISaveChangesInterceptor, DispatchDomainEventsInterceptor>();
-        services.AddScoped<IGetDefaultSetting, GetDefaultSetting>();
 
         RegisterServices(services);
 
@@ -36,17 +39,7 @@ public static class DependencyInjection
 
         services.AddAuthorizationBuilder();
 
-        //services
-        //    .AddIdentityCore<ApplicationUser>()
-        //    .AddRoles<IdentityRole>()
-        //    .AddEntityFrameworkStores<ApplicationDbContext>()
-        //    .AddApiEndpoints();
-
         services.AddSingleton(TimeProvider.System);
-        //services.AddTransient<IIdentityService, IdentityService>();
-
-        //services.AddAuthorization(options =>
-        //    options.AddPolicy(Policies.CanPurge, policy => policy.RequireRole(Roles.Administrator)));
 
         return services;
     }
@@ -57,9 +50,9 @@ public static class DependencyInjection
     /// <param name="services"></param>
     private static void RegisterServices(this IServiceCollection services)
     {
-        var servicesAssembly = Assembly.Load("ProductMatrix.Infrastructure");
+        var servicesAssembly = Assembly.Load("MSt_Postcode_API.Infrastructure");
 
-        var interfacesAssembly = Assembly.Load("ProductMatrix.Application");
+        var interfacesAssembly = Assembly.Load("MSt_Postcode_API.Application");
 
         var serviceTypes = servicesAssembly.GetTypes();
 

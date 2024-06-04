@@ -1,7 +1,31 @@
-﻿namespace ProductMatrix.Infrastructure.Services;
+﻿using System.Reflection;
+using Microsoft.EntityFrameworkCore;
+using MSt_Postcode_API.Application.Common.Extensions;
+using MSt_Postcode_API.Application.Common.Interfaces;
+using MSt_Postcode_API.Application.Common.Utility;
+using MSt_Postcode_API.Infrastructure.Data;
+using Newtonsoft.Json;
+using OfficeOpenXml;
+
+namespace MSt_Postcode_API.Infrastructure.Services;
 
 public class ExcelFileService : IExcelFileService
 {
+    #region Fields
+
+    private readonly ApplicationDbContext _context;
+
+    #endregion
+
+    #region Ctor
+
+    public ExcelFileService(ApplicationDbContext context)
+    {
+        _context = context;
+    }
+
+    #endregion
+
     #region Methods
 
     public async Task<List<T>> GetExcelData<T>(string fileName, string sheetName) where T : class
@@ -11,7 +35,69 @@ public class ExcelFileService : IExcelFileService
         return GetDataFromExcelWorksheet<T>(workbook);
     }
 
+    /// <summary>
+    /// This method is being used to seed data from a json file to db.
+    /// </summary>
+    /// <typeparam name="TEntity"></typeparam>
+    public async Task SeedJson<TEntity>() where TEntity : class
+    {
+        if (!_context.Set<TEntity>().Any())
+        {
+            var jsonString = FilesUtility.GetJsonPath<TEntity>();
+
+            if (!string.IsNullOrWhiteSpace(jsonString))
+            {
+                var data = JsonConvert.DeserializeObject<List<TEntity>>(jsonString);
+
+                if (data is not null && data.Count != 0)
+                {
+                    _context.Set<TEntity>().AddRange(data);
+
+                    await _context.SaveChangesAsync();
+                }
+            }
+        }
+    }
+
     #region Helpers
+
+    /// <summary>
+    /// This method is used to seed excel data collection to Db
+    /// </summary>
+    /// <typeparam name="TEntity"></typeparam>
+    /// <param name="data"></param>
+    /// <returns></returns>
+    public async Task SaveCollection<TEntity>(List<TEntity> data) where TEntity : class
+    {
+        try
+        {
+            var entityType = _context.Model.FindEntityType(typeof(TEntity));
+
+            if (entityType == null)
+            {
+                return;
+            }
+
+            using var transaction = _context.Database.BeginTransaction();
+
+            await _context.Database.ExecuteSqlRawAsync("SET IDENTITY_INSERT " + entityType.GetTableName() + " ON");
+
+            await _context.Set<TEntity>().AddRangeAsync(data);
+
+            await _context.SaveChangesAsync();
+
+            await _context.Database.ExecuteSqlRawAsync("SET IDENTITY_INSERT " + entityType.GetTableName() + " OFF");
+
+            transaction.Commit();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+            throw;
+        }
+
+    }
+
 
     /// <summary>
     /// This method is being used to get a specific workbook from the excel sheet.
@@ -63,7 +149,7 @@ public class ExcelFileService : IExcelFileService
 
         List<T> dataList = new List<T>();
 
-        for (int row = worksheet.Cells[4, 2].Value.GetValue<int>(); row <= worksheet.Dimension.End.Row; row++)
+        for (int row = worksheet.Cells[4, 2].Value.GetValue("int"); row <= worksheet.Dimension.End.Row; row++)
         {
             T obj = Activator.CreateInstance<T>(); //---> Instantiating the object of specific type with Activator to avoid compiler error (if class has some required properties we must declare that property on the time of object instantiation!)
 
@@ -75,7 +161,7 @@ public class ExcelFileService : IExcelFileService
                 {
                     if (property.Name == column.PropertyName)
                     {
-                        property.SetValue(obj, worksheet.Cells[row, column.Column].Value.GetValue2(column.DataType));
+                        property.SetValue(obj, worksheet.Cells[row, column.Column].Value.GetValue(column.DataType));
                     }
                 }
             }
@@ -112,8 +198,8 @@ public class ExcelFileService : IExcelFileService
                         new()
                         {
                             Column = col,
-                            DataType = worksheet.Cells[row, col].Value.GetValue<string>() ?? "",
-                            PropertyName = worksheet.Cells[(row + 1), col].Value.GetValue<string>() ?? ""
+                            DataType = worksheet.Cells[row, col].Value.GetValue("string") ?? "",
+                            PropertyName = worksheet.Cells[(row + 1), col].Value.GetValue("string") ?? ""
                         });
                 }
             }

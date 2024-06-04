@@ -1,4 +1,4 @@
-﻿namespace ProductMatrix.Domain.Exceptions;
+﻿namespace MSt_Postcode_API.Domain.Exceptions;
 
 public class UnsupportedColourException : Exception
 {

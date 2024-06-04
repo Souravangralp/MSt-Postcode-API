@@ -1,4 +1,4 @@
-﻿namespace ProductMatrix.Domain.ValueObjects;
+﻿namespace MSt_Postcode_API.Domain.ValueObjects;
 
 public class Colour(string code) : ValueObject
 {

@@ -1,6 +1,6 @@
 ﻿using FluentValidation.Results;
 
-namespace ProductMatrix.Application.Common.Exceptions;
+namespace MSt_Postcode_API.Application.Common.Exceptions;
 
 public class ValidationException : Exception
 {

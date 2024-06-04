@@ -1,4 +1,4 @@
-﻿namespace ProductMatrix.Application.Common.Models;
+﻿namespace MSt_Postcode_API.Application.Common.Models;
 
 public class PostcodeClassificationDto
 {
@@ -10,7 +10,7 @@ public class PostcodeClassificationDto
 
     public int Classification2 { get; set; }
 
-    public int Classification3 { get; set; }
+    public int? Classification3 { get; set; }
 
-    public int Classification4 { get; set; }
+    public int? Classification4 { get; set; }
 }

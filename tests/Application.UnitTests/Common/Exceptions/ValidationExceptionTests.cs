@@ -1,9 +1,9 @@
-﻿using ProductMatrix.Application.Common.Exceptions;
+﻿using MSt_Postcode_API.Application.Common.Exceptions;
 using FluentAssertions;
 using FluentValidation.Results;
 using NUnit.Framework;
 
-namespace ProductMatrix.Application.UnitTests.Common.Exceptions;
+namespace MSt_Postcode_API.Application.UnitTests.Common.Exceptions;
 
 public class ValidationExceptionTests
 {

@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace ProductMatrix.Web.Infrastructure;
+namespace MSt_Postcode_API.Web.Infrastructure;
 
 public static class IEndpointRouteBuilderExtensions
 {
@@ -8,7 +8,7 @@ public static class IEndpointRouteBuilderExtensions
     {
         Guard.Against.AnonymousMethod(handler);
 
-        builder.MapGet(pattern.ToLower(), handler)
+        builder.MapGet(pattern, handler)
             .WithName(handler.Method.Name);
 
         return builder;
@@ -18,7 +18,7 @@ public static class IEndpointRouteBuilderExtensions
     {
         Guard.Against.AnonymousMethod(handler);
 
-        builder.MapPost(pattern.ToLower(), handler)
+        builder.MapPost(pattern, handler)
             .WithName(handler.Method.Name);
 
         return builder;
@@ -28,7 +28,7 @@ public static class IEndpointRouteBuilderExtensions
     {
         Guard.Against.AnonymousMethod(handler);
 
-        builder.MapPut(pattern.ToLower(), handler)
+        builder.MapPut(pattern, handler)
             .WithName(handler.Method.Name);
 
         return builder;
@@ -38,7 +38,7 @@ public static class IEndpointRouteBuilderExtensions
     {
         Guard.Against.AnonymousMethod(handler);
 
-        builder.MapDelete(pattern.ToLower(), handler)
+        builder.MapDelete(pattern, handler)
             .WithName(handler.Method.Name);
 
         return builder;

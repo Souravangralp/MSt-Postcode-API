@@ -1,4 +1,7 @@
-﻿namespace ProductAPI.Infrastructure.Identity;
+﻿using MSt_Postcode_API.Application.Common.Models;
+using Microsoft.AspNetCore.Identity;
+
+namespace MSt_Postcode_API.Infrastructure.Identity;
 
 public static class IdentityResultExtensions
 {

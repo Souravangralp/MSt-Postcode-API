@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <RootNamespace>ProductMatrix.Infrastructure.IntegrationTests</RootNamespace>
-        <AssemblyName>ProductMatrix.Infrastructure.IntegrationTests</AssemblyName>
+        <RootNamespace>MSt_Postcode_API.Infrastructure.IntegrationTests</RootNamespace>
+        <AssemblyName>MSt_Postcode_API.Infrastructure.IntegrationTests</AssemblyName>
     </PropertyGroup>
 
     <ItemGroup>

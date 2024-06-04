@@ -1,35 +1,29 @@
 ﻿using MediatR.Pipeline;
 using Microsoft.Extensions.Logging;
 
-namespace ProductMatrix.Application.Common.Behaviours;
+namespace MSt_Postcode_API.Application.Common.Behaviours;
 
 public class LoggingBehaviour<TRequest> : IRequestPreProcessor<TRequest> where TRequest : notnull
 {
     private readonly ILogger _logger;
-    private readonly IUser _user;
-    //private readonly IIdentityService _identityService;
 
-    public LoggingBehaviour(ILogger<TRequest> logger, IUser user) /*IIdentityService identityService*/
+    public LoggingBehaviour(ILogger<TRequest> logger)
     {
         _logger = logger;
-        _user = user;
-        //_identityService = identityService;
     }
 
     public async Task Process(TRequest request, CancellationToken cancellationToken)
     {
         var requestName = typeof(TRequest).Name;
-        var userId = _user.Id ?? string.Empty;
+        var userId = string.Empty;
         string? userName = string.Empty;
 
-        await Task.FromResult(1); // not working
+        if (!string.IsNullOrEmpty(userId))
+        {
+            userName = await Task.FromResult(string.Empty); // await _identityService.GetUserNameAsync(userId);
+        }
 
-        //if (!string.IsNullOrEmpty(userId))
-        //{
-        //    userName = await _identityService.GetUserNameAsync(userId);
-        //}
-
-        _logger.LogInformation("ProductMatrix Request: {Name} {@UserId} {@UserName} {@Request}",
+        _logger.LogInformation("MSt_Postcode_API Request: {Name} {@UserId} {@UserName} {@Request}",
             requestName, userId, userName, request);
     }
 }

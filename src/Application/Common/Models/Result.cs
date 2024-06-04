@@ -1,4 +1,4 @@
-﻿namespace ProductMatrix.Application.Common.Models;
+﻿namespace MSt_Postcode_API.Application.Common.Models;
 
 public class Result
 {

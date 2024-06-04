@@ -1,4 +1,4 @@
-﻿namespace ProductMatrix.Domain.Enums;
+﻿namespace MSt_Postcode_API.Domain.Enums;
 
 public enum PriorityLevel
 {

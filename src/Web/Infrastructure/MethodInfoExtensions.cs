@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace ProductMatrix.Web.Infrastructure;
+namespace MSt_Postcode_API.Web.Infrastructure;
 
 public static class MethodInfoExtensions
 {

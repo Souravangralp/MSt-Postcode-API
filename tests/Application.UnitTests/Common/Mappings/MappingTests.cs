@@ -1,14 +1,10 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using AutoMapper;
-using ProductAPI.Application.Common.Interfaces;
-using ProductAPI.Application.Common.Models;
-using ProductAPI.Application.TodoItems.Queries.GetTodoItemsWithPagination;
-using ProductAPI.Application.TodoLists.Queries.GetTodos;
-using ProductAPI.Domain.Entities;
+using MSt_Postcode_API.Application.Common.Interfaces;
 using NUnit.Framework;
 
-namespace ProductAPI.Application.UnitTests.Common.Mappings;
+namespace MSt_Postcode_API.Application.UnitTests.Common.Mappings;
 
 public class MappingTests
 {
@@ -27,19 +23,6 @@ public class MappingTests
     public void ShouldHaveValidConfiguration()
     {
         _configuration.AssertConfigurationIsValid();
-    }
-
-    [Test]
-    [TestCase(typeof(TodoList), typeof(TodoListDto))]
-    [TestCase(typeof(TodoItem), typeof(TodoItemDto))]
-    [TestCase(typeof(TodoList), typeof(LookupDto))]
-    [TestCase(typeof(TodoItem), typeof(LookupDto))]
-    [TestCase(typeof(TodoItem), typeof(TodoItemBriefDto))]
-    public void ShouldSupportMappingFromSourceToDestination(Type source, Type destination)
-    {
-        var instance = GetInstanceOf(source);
-
-        _mapper.Map(instance, source, destination);
     }
 
     private object GetInstanceOf(Type type)

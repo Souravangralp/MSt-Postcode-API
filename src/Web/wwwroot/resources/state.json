@@ -1,55 +1,55 @@
 [
   {
     "name": "Exclude",
-    "abbreivatedName": "Exclude",
+    "abbreviatedName": "Exclude",
     "isterritory": 0,
     "isDeleted": 0
   },
   {
     "name": "Australian Capital Territory",
-    "abbreivatedName": "ACT",
+    "abbreviatedName": "ACT",
     "isterritory": 1,
     "isDeleted": 0
   },
   {
     "name": "Northern Territory",
-    "abbreivatedName": "NT",
+    "abbreviatedName": "NT",
     "isterritory": 1,
     "isDeleted": 0
   },
   {
     "name": "New South Wales",
-    "abbreivatedName": "NSW",
+    "abbreviatedName": "NSW",
     "isterritory": 0,
     "isDeleted": 0
   },
   {
     "name": "Queensland",
-    "abbreivatedName": "QLD",
+    "abbreviatedName": "QLD",
     "isterritory": 0,
     "isDeleted": 0
   },
   {
     "name": "South Australia",
-    "abbreivatedName": "SA",
+    "abbreviatedName": "SA",
     "isterritory": 0,
     "isDeleted": 0
   },
   {
     "name": "Tasmania",
-    "abbreivatedName": "TAS",
+    "abbreviatedName": "TAS",
     "isterritory": 0,
     "isDeleted": 0
   },
   {
     "name": "Victoria",
-    "abbreivatedName": "VIC",
+    "abbreviatedName": "VIC",
     "isterritory": 0,
     "isDeleted": 0
   },
   {
     "name": "Western Australia",
-    "abbreivatedName": "WA",
+    "abbreviatedName": "WA",
     "isterritory": 0,
     "isDeleted": 0
   }

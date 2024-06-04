@@ -1,4 +1,5 @@
-using ProductMatrix.Infrastructure.Data;
+using MSt_Postcode_API.Infrastructure;
+using MSt_Postcode_API.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,26 +10,12 @@ builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddWebServices();
 
-builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
-{
-    builder.AllowAnyOrigin()
-           .AllowAnyMethod()
-           .AllowAnyHeader();
-}));
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
+if (app.Environment.IsDevelopment())
 {
     await app.InitialiseDatabaseAsync();
-
-    app.UseSwaggerUi(settings =>
-    {
-        settings.Path = "/api";
-        settings.DocumentPath = "/api/specification.json";
-    });
-
 }
 else
 {
@@ -40,7 +27,11 @@ app.UseHealthChecks("/health");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-app.UseCors("MyPolicy");
+app.UseSwaggerUi(settings =>
+{
+    settings.Path = "/api";
+    settings.DocumentPath = "/api/specification.json";
+});
 
 app.MapControllerRoute(
     name: "default",

@@ -1,6 +1,6 @@
-﻿using ValidationException = ProductMatrix.Application.Common.Exceptions.ValidationException;
+﻿using ValidationException = MSt_Postcode_API.Application.Common.Exceptions.ValidationException;
 
-namespace ProductMatrix.Application.Common.Behaviours;
+namespace MSt_Postcode_API.Application.Common.Behaviours;
 
 public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
      where TRequest : notnull

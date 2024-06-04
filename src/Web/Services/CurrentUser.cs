@@ -1,10 +1,8 @@
 ﻿using System.Security.Claims;
 
-using ProductMatrix.Application.Common.Interfaces;
+namespace MSt_Postcode_API.Web.Services;
 
-namespace ProductMatrix.Web.Services;
-
-public class CurrentUser : IUser
+public class CurrentUser
 {
     private readonly IHttpContextAccessor _httpContextAccessor;
 

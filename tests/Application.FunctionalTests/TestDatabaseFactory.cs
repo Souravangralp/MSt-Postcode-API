@@ -1,4 +1,4 @@
-﻿namespace ProductMatrix.Application.FunctionalTests;
+﻿namespace MSt_Postcode_API.Application.FunctionalTests;
 
 public static class TestDatabaseFactory
 {

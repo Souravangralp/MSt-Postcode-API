@@ -1,20 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <RootNamespace>ProductMatrix.Infrastructure</RootNamespace>
-    <AssemblyName>ProductMatrix.Infrastructure</AssemblyName>
+    <RootNamespace>MSt_Postcode_API.Infrastructure</RootNamespace>
+    <AssemblyName>MSt_Postcode_API.Infrastructure</AssemblyName>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Identity\**" />
-    <EmbeddedResource Remove="Identity\**" />
-    <None Remove="Identity\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="Data\Configurations\TodoItemConfiguration.cs" />
-    <Compile Remove="Data\Configurations\TodoListConfiguration.cs" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="EPPlus" />

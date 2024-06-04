@@ -1,4 +1,4 @@
-﻿namespace ProductMatrix.Domain.Constants;
+﻿namespace MSt_Postcode_API.Domain.Constants;
 
 public record PostcodeClassificationType(string Value)
 {

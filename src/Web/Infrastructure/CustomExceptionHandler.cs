@@ -1,7 +1,8 @@
-﻿using ProductMatrix.Application.Common.Exceptions;
+﻿using MSt_Postcode_API.Application.Common.Exceptions;
 using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
 
-namespace ProductMatrix.Web.Infrastructure;
+namespace MSt_Postcode_API.Web.Infrastructure;
 
 public class CustomExceptionHandler : IExceptionHandler
 {

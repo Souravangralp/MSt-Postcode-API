@@ -1,21 +1,11 @@
 ﻿using System.Reflection;
-using ProductMatrix.Application.Common.Security;
+using MSt_Postcode_API.Application.Common.Exceptions;
+using MSt_Postcode_API.Application.Common.Security;
 
-namespace ProductMatrix.Application.Common.Behaviours;
+namespace MSt_Postcode_API.Application.Common.Behaviours;
 
 public class AuthorizationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : notnull
 {
-    private readonly IUser _user;
-    //private readonly IIdentityService _identityService;
-
-    public AuthorizationBehaviour(
-        IUser user)
-        //IIdentityService identityService)
-    {
-        _user = user;
-        //_identityService = identityService;
-    }
-
     public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
     {
         var authorizeAttributes = request.GetType().GetCustomAttributes<AuthorizeAttribute>();
@@ -23,10 +13,10 @@ public class AuthorizationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRe
         if (authorizeAttributes.Any())
         {
             // Must be authenticated user
-            if (_user.Id == null)
-            {
-                throw new UnauthorizedAccessException();
-            }
+            //if (_user.Id == null)
+            //{
+            //    throw new UnauthorizedAccessException();
+            //}
 
             // Role-based authorization
             var authorizeAttributesWithRoles = authorizeAttributes.Where(a => !string.IsNullOrWhiteSpace(a.Roles));
@@ -39,12 +29,12 @@ public class AuthorizationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRe
                 {
                     foreach (var role in roles)
                     {
-                        //var isInRole = await _identityService.IsInRoleAsync(_user.Id, role.Replace(" ", ""));
-                        //if (isInRole)
-                        //{
-                        //    authorized = true;
-                        //    break;
-                        //}
+                        var isInRole = true; //await _identityService.IsInRoleAsync(_user.Id, role.Trim());
+                        if (isInRole)
+                        {
+                            authorized = true;
+                            break;
+                        }
                     }
                 }
 
@@ -61,12 +51,12 @@ public class AuthorizationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRe
             {
                 foreach (var policy in authorizeAttributesWithPolicies.Select(a => a.Policy))
                 {
-                    //var authorized = await _identityService.AuthorizeAsync(_user.Id, policy);
+                    var authorized = true;// await _identityService.AuthorizeAsync(_user.Id, policy);
 
-                    //if (!authorized)
-                    //{
-                    //    throw new ForbiddenAccessException();
-                    //}
+                    if (!authorized)
+                    {
+                        throw new ForbiddenAccessException();
+                    }
                 }
             }
         }
