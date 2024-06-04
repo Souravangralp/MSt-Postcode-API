@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Category 1",
+    "isDeleted": 0
+  },
+  {
+    "name": "Category 2",
+    "isDeleted": 0
+  },
+  {
+    "name": "Category 3",
+    "isDeleted": 0
+  },
+  {
+    "name": "Category 4",
+    "isDeleted": 0
+  },
+  {
+    "name": "Unlisted",
+    "isDeleted": 0
+  }
+]

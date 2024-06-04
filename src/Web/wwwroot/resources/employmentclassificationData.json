@@ -1,0 +1,446 @@
+[
+  {
+    "EmploymentStatusType": "Permanent Full time",
+    "MinimumExperienceOfWorkInMonths": "24",
+    "MaximumExperienceOfWorkInMonths": "72",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Permanent Full time",
+    "MinimumExperienceOfWorkInMonths": "12",
+    "MaximumExperienceOfWorkInMonths": "24",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Permanent Full time",
+    "MinimumExperienceOfWorkInMonths": "6",
+    "MaximumExperienceOfWorkInMonths": "12",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Permanent Full time",
+    "MinimumExperienceOfWorkInMonths": "3",
+    "MaximumExperienceOfWorkInMonths": "6",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Permanent Full time",
+    "MinimumExperienceOfWorkInMonths": "1",
+    "MaximumExperienceOfWorkInMonths": "3",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Permanent Full time",
+    "MinimumExperienceOfWorkInMonths": "0",
+    "MaximumExperienceOfWorkInMonths": "1",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Permanent Full time",
+    "MinimumExperienceOfWorkInMonths": "24",
+    "MaximumExperienceOfWorkInMonths": "72",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Permanent Full time",
+    "MinimumExperienceOfWorkInMonths": "12",
+    "MaximumExperienceOfWorkInMonths": "24",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Permanent Full time",
+    "MinimumExperienceOfWorkInMonths": "6",
+    "MaximumExperienceOfWorkInMonths": "12",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Permanent Full time",
+    "MinimumExperienceOfWorkInMonths": "3",
+    "MaximumExperienceOfWorkInMonths": "6",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Permanent Full time",
+    "MinimumExperienceOfWorkInMonths": "1",
+    "MaximumExperienceOfWorkInMonths": "3",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Permanent Full time",
+    "MinimumExperienceOfWorkInMonths": "0",
+    "MaximumExperienceOfWorkInMonths": "1",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Full time (probation) ",
+    "MinimumExperienceOfWorkInMonths": "3",
+    "MaximumExperienceOfWorkInMonths": "6",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Full time (probation) ",
+    "MinimumExperienceOfWorkInMonths": "2",
+    "MaximumExperienceOfWorkInMonths": "3",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Full time (probation) ",
+    "MinimumExperienceOfWorkInMonths": "1",
+    "MaximumExperienceOfWorkInMonths": "2",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Full time (probation) ",
+    "MinimumExperienceOfWorkInMonths": "0",
+    "MaximumExperienceOfWorkInMonths": "1",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Full time (probation) ",
+    "MinimumExperienceOfWorkInMonths": "3",
+    "MaximumExperienceOfWorkInMonths": "6",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Full time (probation) ",
+    "MinimumExperienceOfWorkInMonths": "2",
+    "MaximumExperienceOfWorkInMonths": "3",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Full time (probation) ",
+    "MinimumExperienceOfWorkInMonths": "1",
+    "MaximumExperienceOfWorkInMonths": "2",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Full time (probation) ",
+    "MinimumExperienceOfWorkInMonths": "0",
+    "MaximumExperienceOfWorkInMonths": "1",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Permanent part time",
+    "MinimumExperienceOfWorkInMonths": "24",
+    "MaximumExperienceOfWorkInMonths": "72",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Permanent part time",
+    "MinimumExperienceOfWorkInMonths": "12",
+    "MaximumExperienceOfWorkInMonths": "24",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Permanent part time",
+    "MinimumExperienceOfWorkInMonths": "6",
+    "MaximumExperienceOfWorkInMonths": "12",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Permanent part time",
+    "MinimumExperienceOfWorkInMonths": "3",
+    "MaximumExperienceOfWorkInMonths": "6",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Permanent part time",
+    "MinimumExperienceOfWorkInMonths": "1",
+    "MaximumExperienceOfWorkInMonths": "3",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Permanent part time",
+    "MinimumExperienceOfWorkInMonths": "0",
+    "MaximumExperienceOfWorkInMonths": "1",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Permanent part time",
+    "MinimumExperienceOfWorkInMonths": "24",
+    "MaximumExperienceOfWorkInMonths": "72",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Permanent part time",
+    "MinimumExperienceOfWorkInMonths": "12",
+    "MaximumExperienceOfWorkInMonths": "24",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Permanent part time",
+    "MinimumExperienceOfWorkInMonths": "6",
+    "MaximumExperienceOfWorkInMonths": "12",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Permanent part time",
+    "MinimumExperienceOfWorkInMonths": "3",
+    "MaximumExperienceOfWorkInMonths": "6",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Permanent part time",
+    "MinimumExperienceOfWorkInMonths": "1",
+    "MaximumExperienceOfWorkInMonths": "3",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Permanent part time",
+    "MinimumExperienceOfWorkInMonths": "0",
+    "MaximumExperienceOfWorkInMonths": "1",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Casual",
+    "MinimumExperienceOfWorkInMonths": "72",
+    "MaximumExperienceOfWorkInMonths": "720",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Casual",
+    "MinimumExperienceOfWorkInMonths": "24",
+    "MaximumExperienceOfWorkInMonths": "72",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Casual",
+    "MinimumExperienceOfWorkInMonths": "12",
+    "MaximumExperienceOfWorkInMonths": "24",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Casual",
+    "MinimumExperienceOfWorkInMonths": "6",
+    "MaximumExperienceOfWorkInMonths": "12",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Casual",
+    "MinimumExperienceOfWorkInMonths": "3",
+    "MaximumExperienceOfWorkInMonths": "6",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Casual",
+    "MinimumExperienceOfWorkInMonths": "1",
+    "MaximumExperienceOfWorkInMonths": "3",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Casual",
+    "MinimumExperienceOfWorkInMonths": "0",
+    "MaximumExperienceOfWorkInMonths": "1",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Casual",
+    "MinimumExperienceOfWorkInMonths": "72",
+    "MaximumExperienceOfWorkInMonths": "720",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Casual",
+    "MinimumExperienceOfWorkInMonths": "24",
+    "MaximumExperienceOfWorkInMonths": "72",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Casual",
+    "MinimumExperienceOfWorkInMonths": "12",
+    "MaximumExperienceOfWorkInMonths": "24",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Casual",
+    "MinimumExperienceOfWorkInMonths": "6",
+    "MaximumExperienceOfWorkInMonths": "12",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Casual",
+    "MinimumExperienceOfWorkInMonths": "3",
+    "MaximumExperienceOfWorkInMonths": "6",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Casual",
+    "MinimumExperienceOfWorkInMonths": "1",
+    "MaximumExperienceOfWorkInMonths": "3",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Casual",
+    "MinimumExperienceOfWorkInMonths": "0",
+    "MaximumExperienceOfWorkInMonths": "1",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Contract",
+    "MinimumExperienceOfWorkInMonths": "72",
+    "MaximumExperienceOfWorkInMonths": "720",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Contract",
+    "MinimumExperienceOfWorkInMonths": "24",
+    "MaximumExperienceOfWorkInMonths": "72",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Contract",
+    "MinimumExperienceOfWorkInMonths": "12",
+    "MaximumExperienceOfWorkInMonths": "24",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Contract",
+    "MinimumExperienceOfWorkInMonths": "6",
+    "MaximumExperienceOfWorkInMonths": "12",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Contract",
+    "MinimumExperienceOfWorkInMonths": "3",
+    "MaximumExperienceOfWorkInMonths": "6",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Contract",
+    "MinimumExperienceOfWorkInMonths": "1",
+    "MaximumExperienceOfWorkInMonths": "3",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Contract",
+    "MinimumExperienceOfWorkInMonths": "0",
+    "MaximumExperienceOfWorkInMonths": "1",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Contract",
+    "MinimumExperienceOfWorkInMonths": "72",
+    "MaximumExperienceOfWorkInMonths": "720",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Contract",
+    "MinimumExperienceOfWorkInMonths": "24",
+    "MaximumExperienceOfWorkInMonths": "72",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Contract",
+    "MinimumExperienceOfWorkInMonths": "12",
+    "MaximumExperienceOfWorkInMonths": "24",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Contract",
+    "MinimumExperienceOfWorkInMonths": "6",
+    "MaximumExperienceOfWorkInMonths": "12",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Contract",
+    "MinimumExperienceOfWorkInMonths": "3",
+    "MaximumExperienceOfWorkInMonths": "6",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Contract",
+    "MinimumExperienceOfWorkInMonths": "1",
+    "MaximumExperienceOfWorkInMonths": "3",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Contract",
+    "MinimumExperienceOfWorkInMonths": "0",
+    "MaximumExperienceOfWorkInMonths": "1",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Second job",
+    "MinimumExperienceOfWorkInMonths": "72",
+    "MaximumExperienceOfWorkInMonths": "720",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Second job",
+    "MinimumExperienceOfWorkInMonths": "24",
+    "MaximumExperienceOfWorkInMonths": "72",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Second job",
+    "MinimumExperienceOfWorkInMonths": "12",
+    "MaximumExperienceOfWorkInMonths": "24",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Second job",
+    "MinimumExperienceOfWorkInMonths": "6",
+    "MaximumExperienceOfWorkInMonths": "12",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Second job",
+    "MinimumExperienceOfWorkInMonths": "3",
+    "MaximumExperienceOfWorkInMonths": "6",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Second job",
+    "MinimumExperienceOfWorkInMonths": "1",
+    "MaximumExperienceOfWorkInMonths": "3",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Second job",
+    "MinimumExperienceOfWorkInMonths": "0",
+    "MaximumExperienceOfWorkInMonths": "1",
+    "IsSameLineOfWork": true
+  },
+  {
+    "EmploymentStatusType": "Second job",
+    "MinimumExperienceOfWorkInMonths": "72",
+    "MaximumExperienceOfWorkInMonths": "720",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Second job",
+    "MinimumExperienceOfWorkInMonths": "24",
+    "MaximumExperienceOfWorkInMonths": "72",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Second job",
+    "MinimumExperienceOfWorkInMonths": "12",
+    "MaximumExperienceOfWorkInMonths": "24",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Second job",
+    "MinimumExperienceOfWorkInMonths": "6",
+    "MaximumExperienceOfWorkInMonths": "12",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Second job",
+    "MinimumExperienceOfWorkInMonths": "3",
+    "MaximumExperienceOfWorkInMonths": "6",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Second job",
+    "MinimumExperienceOfWorkInMonths": "1",
+    "MaximumExperienceOfWorkInMonths": "3",
+    "IsSameLineOfWork": false
+  },
+  {
+    "EmploymentStatusType": "Second job",
+    "MinimumExperienceOfWorkInMonths": "0",
+    "MaximumExperienceOfWorkInMonths": "1",
+    "IsSameLineOfWork": false
+  }
+]

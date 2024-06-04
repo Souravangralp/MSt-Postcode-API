@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Agricultural",
+    "isDeleted": 0
+  },
+  {
+    "name": "Commercial",
+    "isDeleted": 0
+  },
+  {
+    "name": "Farm",
+    "isDeleted": 0
+  },
+  {
+    "name": "Hobby Farm",
+    "isDeleted": 0
+  },
+  {
+    "name": "Indeterminable",
+    "isDeleted": 0
+  },
+  {
+    "name": "Mixed use",
+    "isDeleted": 0
+  },
+  {
+    "name": "Office",
+    "isDeleted": 0
+  },
+  {
+    "name": "Residential",
+    "isDeleted": 0
+  },
+  {
+    "name": "Retail",
+    "isDeleted": 0
+  },
+  {
+    "name": "Rural Residential",
+    "isDeleted": 0
+  },
+  {
+    "name": "Warehouse",
+    "isDeleted": 0
+  },
+  {
+    "name": "SMSF Residential",
+    "isDeleted": 0
+  }
+]

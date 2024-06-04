@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>ProductMatrix.Infrastructure</RootNamespace>
+    <AssemblyName>ProductMatrix.Infrastructure</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Identity\**" />
+    <EmbeddedResource Remove="Identity\**" />
+    <None Remove="Identity\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Configurations\TodoItemConfiguration.cs" />
+    <Compile Remove="Data\Configurations\TodoListConfiguration.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" />
+    <PackageReference Include="Newtonsoft.Json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application\Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\Configurations\" />
+  </ItemGroup>
+
+</Project>

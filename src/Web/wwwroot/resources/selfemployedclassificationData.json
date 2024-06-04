@@ -1,0 +1,107 @@
+[
+  {
+    "SelfEmployedClassification_DocTypeID": 1,
+    "MinimumTimeInMonths": 72,
+    "MaximumTimeInMonths": 720
+  },
+  {
+    "SelfEmployedClassification_DocTypeID": 1,
+    "MinimumTimeInMonths": 24,
+    "MaximumTimeInMonths": 72
+  },
+  {
+    "SelfEmployedClassification_DocTypeID": 1,
+    "MinimumTimeInMonths": 12,
+    "MaximumTimeInMonths": 24
+  },
+  {
+    "SelfEmployedClassification_DocTypeID": 1,
+    "MinimumTimeInMonths": 6,
+    "MaximumTimeInMonths": 12
+  },
+  {
+    "SelfEmployedClassification_DocTypeID": 1,
+    "MinimumTimeInMonths": 3,
+    "MaximumTimeInMonths": 6
+  },
+  {
+    "SelfEmployedClassification_DocTypeID": 1,
+    "MinimumTimeInMonths": 1,
+    "MaximumTimeInMonths": 3
+  },
+  {
+    "SelfEmployedClassification_DocTypeID": 1,
+    "MinimumTimeInMonths": 0,
+    "MaximumTimeInMonths": 1
+  },
+  {
+    "SelfEmployedClassification_DocTypeID": 2,
+    "MinimumTimeInMonths": 72,
+    "MaximumTimeInMonths": 720
+  },
+  {
+    "SelfEmployedClassification_DocTypeID": 2,
+    "MinimumTimeInMonths": 24,
+    "MaximumTimeInMonths": 72
+  },
+  {
+    "SelfEmployedClassification_DocTypeID": 2,
+    "MinimumTimeInMonths": 12,
+    "MaximumTimeInMonths": 24
+  },
+  {
+    "SelfEmployedClassification_DocTypeID": 2,
+    "MinimumTimeInMonths": 6,
+    "MaximumTimeInMonths": 12
+  },
+  {
+    "SelfEmployedClassification_DocTypeID": 2,
+    "MinimumTimeInMonths": 3,
+    "MaximumTimeInMonths": 6
+  },
+  {
+    "SelfEmployedClassification_DocTypeID": 2,
+    "MinimumTimeInMonths": 1,
+    "MaximumTimeInMonths": 3
+  },
+  {
+    "SelfEmployedClassification_DocTypeID": 2,
+    "MinimumTimeInMonths": 0,
+    "MaximumTimeInMonths": 1
+  },
+  {
+    "SelfEmployedClassification_DocTypeID": 3,
+    "MinimumTimeInMonths": 72,
+    "MaximumTimeInMonths": 720
+  },
+  {
+    "SelfEmployedClassification_DocTypeID": 3,
+    "MinimumTimeInMonths": 24,
+    "MaximumTimeInMonths": 72
+  },
+  {
+    "SelfEmployedClassification_DocTypeID": 3,
+    "MinimumTimeInMonths": 12,
+    "MaximumTimeInMonths": 24
+  },
+  {
+    "SelfEmployedClassification_DocTypeID": 3,
+    "MinimumTimeInMonths": 6,
+    "MaximumTimeInMonths": 12
+  },
+  {
+    "SelfEmployedClassification_DocTypeID": 3,
+    "MinimumTimeInMonths": 3,
+    "MaximumTimeInMonths": 6
+  },
+  {
+    "SelfEmployedClassification_DocTypeID": 3,
+    "MinimumTimeInMonths": 1,
+    "MaximumTimeInMonths": 3
+  },
+  {
+    "SelfEmployedClassification_DocTypeID": 3,
+    "MinimumTimeInMonths": 0,
+    "MaximumTimeInMonths": 1
+  }
+]

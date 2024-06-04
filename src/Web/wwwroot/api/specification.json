@@ -1,0 +1,1034 @@
+{
+  "x-generator": "NSwag v14.0.3.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))",
+  "openapi": "3.0.0",
+  "info": {
+    "title": "ProductMatrix API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/calculators/calculatelvr": {
+      "get": {
+        "tags": [
+          "Calculators"
+        ],
+        "summary": "Calculate loan to value ratio",
+        "description": "Get loan to value ratio based on security amount and loan amount.",
+        "operationId": "CalculateLoanToValueRatio",
+        "parameters": [
+          {
+            "name": "LoanAmount",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "double"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "SecurityAmount",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "double"
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/calculators/calculatelandsize": {
+      "get": {
+        "tags": [
+          "Calculators"
+        ],
+        "summary": "Calculate land size to hectare",
+        "description": "Get land size calculated in hectares from meters square and acres. (1 denotes to meter squares whereas 2 denotes to acres)",
+        "operationId": "CalculateLandsizeIntoHectare",
+        "parameters": [
+          {
+            "name": "LandSize",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "double"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "ConversionTypeId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/LandConversionTypes"
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/postcodes/category": {
+      "get": {
+        "tags": [
+          "Postcodes"
+        ],
+        "summary": "Get location category by postcode and state",
+        "description": "Get location category by postcode and state or territory name.",
+        "operationId": "GetCategoryWithPostCode",
+        "parameters": [
+          {
+            "name": "Postcode",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "StateORTerritoryName",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostcodeResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/postcodes/update": {
+      "put": {
+        "tags": [
+          "Postcodes"
+        ],
+        "summary": "Update postcode classifications",
+        "description": "Update postcode classification with postcode.",
+        "operationId": "UpdatePostcodeClassification",
+        "requestBody": {
+          "x-name": "query",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePostcodeClassificationCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/productfilters/productfilterquery": {
+      "post": {
+        "tags": [
+          "ProductFilters"
+        ],
+        "summary": "Get product",
+        "description": "Get a product based on different filter.",
+        "operationId": "ProductFilterQuery",
+        "requestBody": {
+          "x-name": "query",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductFilterQuery"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TextValuePair"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products/category": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Get all product categories",
+        "description": "Get a list of product categories.",
+        "operationId": "GetCategories",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TextValuePair"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Get a product by product category id and loanAmount",
+        "description": "Get a product by product category id and loanAmount.",
+        "operationId": "GetProducts",
+        "parameters": [
+          {
+            "name": "ProductCategoryID",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "LoanAmount",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "double"
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TextValuePair"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products/calculatefee": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Calculate product fee",
+        "description": "Get a precise calculated product fee based on LoanAmount, LVR, ProductId, LocationCategoryID, DocTypeId, etc.",
+        "operationId": "CalculateProductFee",
+        "parameters": [
+          {
+            "name": "ProductId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "VacantLandCategory",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "name": "RelocationServicingCategory",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 3
+          },
+          {
+            "name": "CouncilZoningCategory",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 4
+          },
+          {
+            "name": "NumberOfDwellings",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 5
+          },
+          {
+            "name": "NumberOfParticipatingEntities",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 6
+          },
+          {
+            "name": "DocType",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 7
+          },
+          {
+            "name": "CategoryType",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 8
+          },
+          {
+            "name": "LVR",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "double"
+            },
+            "x-position": 9
+          },
+          {
+            "name": "LandSize",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "double"
+            },
+            "x-position": 10
+          },
+          {
+            "name": "LoanAmount",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "double"
+            },
+            "x-position": 11
+          },
+          {
+            "name": "PCCategory",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 12
+          },
+          {
+            "name": "ISOwnerOccupied",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "boolean"
+            },
+            "x-position": 13
+          },
+          {
+            "name": "ISNaturalPerson",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "boolean"
+            },
+            "x-position": 14
+          },
+          {
+            "name": "ISHighDensity",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "boolean"
+            },
+            "x-position": 15
+          },
+          {
+            "name": "ISSelectedNonMetro",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "boolean"
+            },
+            "x-position": 16
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductFeeResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products/deleteproductselectorcommand": {
+      "delete": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Delete rule",
+        "description": "Delete a rule based on filter and ruleID",
+        "operationId": "DeleteProductSelectorCommand",
+        "parameters": [
+          {
+            "name": "CouncilZoningTypeID",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "FilterID",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 2
+          },
+          {
+            "name": "RuleID",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 3
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products/updateproductselectorcommand": {
+      "put": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Update filter",
+        "description": "Update the filter with its FilterId",
+        "operationId": "UpdateProductSelectorCommand",
+        "parameters": [
+          {
+            "name": "CouncilZoningTypeID",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "FilterID",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 2
+          }
+        ],
+        "requestBody": {
+          "x-name": "Model",
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {}
+            }
+          },
+          "required": true,
+          "x-position": 3
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "LandConversionTypes": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "MeterSquare",
+          "Acres"
+        ],
+        "enum": [
+          1,
+          2
+        ]
+      },
+      "PostcodeResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "capital": {
+            "type": "string"
+          },
+          "pcCategory": {
+            "type": "string"
+          },
+          "isMetroPlus": {
+            "type": "boolean"
+          },
+          "isHighDensity": {
+            "type": "boolean"
+          },
+          "isSelectedNonMetro": {
+            "type": "boolean"
+          }
+        }
+      },
+      "UpdatePostcodeClassificationCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "postcode": {
+            "type": "string"
+          },
+          "pcCategory": {
+            "type": "string"
+          },
+          "standardAndPoor": {
+            "type": "string"
+          },
+          "highSecurity": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "TextValuePair": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "key": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "value": {
+            "type": "string"
+          },
+          "isDefault": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ProductFilterQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "productFilterDto": {
+            "$ref": "#/components/schemas/ProductFilterDto"
+          }
+        }
+      },
+      "ProductFilterDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "docType": {
+            "type": "string",
+            "default": ""
+          },
+          "loanAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "usageType": {
+            "type": "string",
+            "default": ""
+          },
+          "lvr": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "state": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "postcode": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "suburb": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "residencyType": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "dwellings": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "borrowingEntityType": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "loanTermInYears": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "repaymentType": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "repaymentRateType": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "repaymentTimeInYears": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "naturalPersonAge": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "employmentStatusType": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "experienceOfWorkInMonths": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "selfEmployedTimeInMonths": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "isSameLineOfWork": {
+            "type": "boolean",
+            "default": false,
+            "nullable": true
+          },
+          "employerType": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "councilZoiningCategory": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "zone": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "otherIncomeType": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "potentialImpactfulType": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "ageCreditReport": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "builderType": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "constructionType": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "renovationType": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "isGreenRated": {
+            "type": "boolean",
+            "default": false
+          },
+          "cashOutType": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "businessFinanceType": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "councilZoningType": {
+            "type": "string",
+            "default": ""
+          },
+          "unitApartmentSize": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "facilityType": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "guidedByType": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "heedFullPointsType": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "securityType": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "titleType": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "serviceType": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "secondaryUsageType": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "landSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "equityType": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "awayBankType": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "consolidateLoan": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "buttonTypeDto": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ButtonTypeDto"
+              }
+            ]
+          }
+        }
+      },
+      "ButtonTypeDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "offThePlan": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "sellSoonAfter": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "interStateProperty": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "genuineSaving": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "pledgeLoan": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "giftOf": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "venderRebate": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "builderRebate": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          },
+          "fhog": {
+            "type": "string",
+            "default": "",
+            "nullable": true
+          }
+        }
+      },
+      "ProductFeeResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "loanAmount": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "increaseSecurityAmount": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "maximumLVR": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "applicationFee": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "annualFacilityFee": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "riskPercent": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "riskFee": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "establishmentPercent": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "establishmentFee": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "settlementFee": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "dischargeFee": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "constructionAdministrationFee": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "rateLoading": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "deedOfPriority": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "expressFee": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "isSuggestion": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "JWT": {
+        "type": "apiKey",
+        "description": "Type into the textbox: Bearer {your JWT token}.",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "JWT": []
+    }
+  ]
+}

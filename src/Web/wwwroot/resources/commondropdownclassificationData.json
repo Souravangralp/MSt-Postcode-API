@@ -1,0 +1,610 @@
+[
+  {
+    "Type": "Facility_Type",
+    "Value": "Revolving line of credit"
+  },
+  {
+    "Type": "Facility_Type",
+    "Value": "Amortising fully drawn"
+  },
+  {
+    "Type": "Facility_Type",
+    "Value": "Portfolio loan"
+  },
+  {
+    "Type": "Facility_Type",
+    "Value": "Equity line of credit"
+  },
+  {
+    "Type": "Facility_Type",
+    "Value": "Short term loan"
+  },
+  {
+    "Type": "Facility_Type",
+    "Value": "Bullet loan"
+  },
+  {
+    "Type": "Facility_Type",
+    "Value": "Reverse mortgage"
+  },
+  {
+    "Type": "Heedful_Points_Type",
+    "Value": "Nothing to report"
+  },
+  {
+    "Type": "Heedful_Points_Type",
+    "Value": "Flood affected above 1\/100"
+  },
+  {
+    "Type": "Heedful_Points_Type",
+    "Value": "Flood affected below 1\/100"
+  },
+  {
+    "Type": "Heedful_Points_Type",
+    "Value": "Flood affected below slab"
+  },
+  {
+    "Type": "Heedful_Points_Type",
+    "Value": "Bush fire affected"
+  },
+  {
+    "Type": "Heedful_Points_Type",
+    "Value": "Landslide affected"
+  },
+  {
+    "Type": "Heedful_Points_Type",
+    "Value": "Near high voltage, 50m+"
+  },
+  {
+    "Type": "Heedful_Points_Type",
+    "Value": "Near high voltage, 50m-"
+  },
+  {
+    "Type": "Heedful_Points_Type",
+    "Value": "Near mobile mast, 50m+"
+  },
+  {
+    "Type": "Heedful_Points_Type",
+    "Value": "Near mobile mast, 50m-"
+  },
+  {
+    "Type": "Heedful_Points_Type",
+    "Value": "Combustible cladding"
+  },
+  {
+    "Type": "Heedful_Points_Type",
+    "Value": "Located on an island"
+  },
+  {
+    "Type": "Heedful_Points_Type",
+    "Value": "Limited heritage listed"
+  },
+  {
+    "Type": "Heedful_Points_Type",
+    "Value": "Restrictive heritage listed"
+  },
+  {
+    "Type": "Heedful_Points_Type",
+    "Value": "Crown land"
+  },
+  {
+    "Type": "Heedful_Points_Type",
+    "Value": "Mining town"
+  },
+  {
+    "Type": "Secondary_Usage_Type",
+    "Value": "Nothing To Report"
+  },
+  {
+    "Type": "Secondary_Usage_Type",
+    "Value": "Personal Holiday Home"
+  },
+  {
+    "Type": "Secondary_Usage_Type",
+    "Value": "Practise in a House"
+  },
+  {
+    "Type": "Secondary_Usage_Type",
+    "Value": "Residential in industrial zone"
+  },
+  {
+    "Type": "Secondary_Usage_Type",
+    "Value": "Residential in commercial zone"
+  },
+  {
+    "Type": "Secondary_Usage_Type",
+    "Value": "NDIS"
+  },
+  {
+    "Type": "Secondary_Usage_Type",
+    "Value": "NRAS"
+  },
+  {
+    "Type": "Secondary_Usage_Type",
+    "Value": "Practise easily converted to residential"
+  },
+  {
+    "Type": "Secondary_Usage_Type",
+    "Value": "Agricultural farm"
+  },
+  {
+    "Type": "Secondary_Usage_Type",
+    "Value": "Speculative"
+  },
+  {
+    "Type": "Secondary_Usage_Type",
+    "Value": "Retained stock"
+  },
+  {
+    "Type": "Secondary_Usage_Type",
+    "Value": "Development"
+  },
+  {
+    "Type": "Secondary_Usage_Type",
+    "Value": "ATO Liability"
+  },
+  {
+    "Type": "Secondary_Usage_Type",
+    "Value": "Business purpose"
+  },
+  {
+    "Type": "Title_Type",
+    "Value": "Torrens"
+  },
+  {
+    "Type": "Title_Type",
+    "Value": "Limited Torrens"
+  },
+  {
+    "Type": "Title_Type",
+    "Value": "Leasehold"
+  },
+  {
+    "Type": "Title_Type",
+    "Value": "Old systems"
+  },
+  {
+    "Type": "Title_Type",
+    "Value": "Moiety"
+  },
+  {
+    "Type": "Title_Type",
+    "Value": "Purple"
+  },
+  {
+    "Type": "Title_Type",
+    "Value": "Company"
+  },
+  {
+    "Type": "Title_Type",
+    "Value": "Stratum"
+  },
+  {
+    "Type": "Title_Type",
+    "Value": "Strata"
+  },
+  {
+    "Type": "Service_Type",
+    "Value": "Free_Standing_Home_Type"
+  },
+  {
+    "Type": "Service_Type",
+    "Value": "To street"
+  },
+  {
+    "Type": "Service_Type",
+    "Value": "To locality"
+  },
+  {
+    "Type": "Service_Type",
+    "Value": "To town"
+  },
+  {
+    "Type": "Service_Type",
+    "Value": "Non evident"
+  },
+  {
+    "Type": "Guided_By_Type",
+    "Value": "Financial planner"
+  },
+  {
+    "Type": "Guided_By_Type",
+    "Value": "Property advisor"
+  },
+  {
+    "Type": "Guided_By_Type",
+    "Value": "Accountant"
+  },
+  {
+    "Type": "Guided_By_Type",
+    "Value": "Solicitor"
+  },
+  {
+    "Type": "Guided_By_Type",
+    "Value": "2 of the above or more"
+  },
+  {
+    "Type": "Guided_By_Type",
+    "Value": "Self"
+  },
+  {
+    "Type": "Guided_By_Type",
+    "Value": "Parents"
+  },
+  {
+    "Type": "Guided_By_Type",
+    "Value": "Family friends"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Free standing residential property"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "House & granny flat"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Town house"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Terrace"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "villa"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Standard residential apartment"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Bed sitter apartment"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Standard residential unit"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Penthouse"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Sub penthouse"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Student accommodation"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Registered vacant land"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Unregistered vacant land"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Serviced apartment"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Managed apartment"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Boarding house"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Duplex"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Dual key apartment"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Hobby farm"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Hotel room"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Hotel building"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Motel room"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Motel building"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Resort accommodation"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Display home in village"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Display home on street"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Industrial unit"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Commercial unit"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Factory"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Warehouse"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Retail shops"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Commercial offices"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Vineyard &\/or distillery"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "House & hound breeder\/trainer"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Shopping center"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Medical center"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Professional suite"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Childcare center"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Panel beater\/Smash repairs"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Car yard"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Car park"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Car wash"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Listed fast food franchise"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Unlisted fast food franchise"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Nursing home"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Private hospital"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Special accommodation"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Church"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "School"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Caravan Park"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Airport"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Resort project"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Theme Park"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Sports complex\/stadium"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Recreation complex"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Marina"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Casino"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Club"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Massage parlour"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Brothel"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Foundry"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Brickworks"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Quarry"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Landscaping supplies"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Tannery"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Theatre"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Petrol station"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Fuel complex"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Service station"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Abattoir"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "No security"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "New car"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Used car"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "New truck"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Used truck"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "New prime mover"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Used prime mover"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "New trailer"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Used trailer"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "New machinery"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Used machinery"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "New equipment"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Used equipment"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "New electronics"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Used electronics"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "New computers"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Used computers"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "New iPhone"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Used iPhone"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "New iPad"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Used iPad"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "New goods"
+  },
+  {
+    "Type": "Security_Type",
+    "Value": "Used goods"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  { "Name": "Natural person" },
+  { "Name": "Business partnership" },
+  { "Name": "Trading Australian corporation" },
+  { "Name": "Non trading Australian corporation" },
+  { "Name": "Trading discretionary trust" },
+  { "Name": "Non trading discretionary trust" },
+  { "Name": "Trading unit trust" },
+  { "Name": "Non trading unit trust" },
+  { "Name": "Trading hybrid trust" },
+  { "Name": "Non trading hybrid trust" },
+  { "Name": "Church(non for profit)" },
+  { "Name": "Club/Association" },
+  { "Name": "SMSF(with a corporate trustee)" },
+  { "Name": "SMSF(with a natural person as trustee)" },
+  { "Name": "Trust distributions" },
+  { "Name": "Individual Trustee" },
+  { "Name": "Corporate Trustee" }
+]

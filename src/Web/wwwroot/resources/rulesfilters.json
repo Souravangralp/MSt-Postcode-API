@@ -1,0 +1,176 @@
+[
+  {
+    "PrimaryKey": 1,
+    "FilterType_GeneralLookUpID": 176,
+    "RulesFilter_CouncilZoningTypeID": 8,
+    "ParentRuleFilterID": null
+  },
+  {
+    "PrimaryKey": 2,
+    "FilterType_GeneralLookUpID": 177,
+    "RulesFilter_CouncilZoningTypeID": 8,
+    "ParentRuleFilterID": 1
+  },
+  {
+    "PrimaryKey": 3,
+    "FilterType_GeneralLookUpID": 178,
+    "RulesFilter_CouncilZoningTypeID": 8,
+    "ParentRuleFilterID": 1
+  },
+  {
+    "PrimaryKey": 4,
+    "FilterType_GeneralLookUpID": 175,
+    "RulesFilter_CouncilZoningTypeID": 8,
+    "ParentRuleFilterID": null
+  },
+  {
+    "PrimaryKey": 5,
+    "FilterType_GeneralLookUpID": 171,
+    "RulesFilter_CouncilZoningTypeID": 8,
+    "ParentRuleFilterID": null
+  },
+  {
+    "PrimaryKey": 6,
+    "FilterType_GeneralLookUpID": 173,
+    "RulesFilter_CouncilZoningTypeID": 8,
+    "ParentRuleFilterID": null
+  },
+  {
+    "PrimaryKey": 7,
+    "FilterType_GeneralLookUpID": 174,
+    "RulesFilter_CouncilZoningTypeID": 8,
+    "ParentRuleFilterID": 6
+  },
+  {
+    "PrimaryKey": 8,
+    "FilterType_GeneralLookUpID": 176,
+    "RulesFilter_CouncilZoningTypeID": 2,
+    "ParentRuleFilterID": null
+  },
+  {
+    "PrimaryKey": 9,
+    "FilterType_GeneralLookUpID": 177,
+    "RulesFilter_CouncilZoningTypeID": 2,
+    "ParentRuleFilterID": 8
+  },
+  {
+    "PrimaryKey": 10,
+    "FilterType_GeneralLookUpID": 175,
+    "RulesFilter_CouncilZoningTypeID": 2,
+    "ParentRuleFilterID": null
+  },
+  {
+    "PrimaryKey": 11,
+    "FilterType_GeneralLookUpID": 171,
+    "RulesFilter_CouncilZoningTypeID": 2,
+    "ParentRuleFilterID": null
+  },
+  {
+    "PrimaryKey": 12,
+    "FilterType_GeneralLookUpID": 173,
+    "RulesFilter_CouncilZoningTypeID": 2,
+    "ParentRuleFilterID": null
+  },
+  {
+    "PrimaryKey": 13,
+    "FilterType_GeneralLookUpID": 174,
+    "RulesFilter_CouncilZoningTypeID": 2,
+    "ParentRuleFilterID": 12
+  },
+  {
+    "PrimaryKey": 14,
+    "FilterType_GeneralLookUpID": 179,
+    "RulesFilter_CouncilZoningTypeID": 2,
+    "ParentRuleFilterID": 12
+  },
+  {
+    "PrimaryKey": 15,
+    "FilterType_GeneralLookUpID": 180,
+    "RulesFilter_CouncilZoningTypeID": 2,
+    "ParentRuleFilterID": 12
+  },
+  {
+    "PrimaryKey": 16,
+    "FilterType_GeneralLookUpID": 172,
+    "RulesFilter_CouncilZoningTypeID": 2,
+    "ParentRuleFilterID": null
+  },
+  {
+    "PrimaryKey": 17,
+    "FilterType_GeneralLookUpID": 172,
+    "RulesFilter_CouncilZoningTypeID": 8,
+    "ParentRuleFilterID": null
+  },
+  {
+    "PrimaryKey": 18,
+    "FilterType_GeneralLookUpID": 181,
+    "RulesFilter_CouncilZoningTypeID": 2,
+    "ParentRuleFilterID": null
+  },
+  {
+    "PrimaryKey": 19,
+    "FilterType_GeneralLookUpID": 181,
+    "RulesFilter_CouncilZoningTypeID": 8,
+    "ParentRuleFilterID": null
+  },
+  {
+    "PrimaryKey": 20,
+    "FilterType_GeneralLookUpID": 176,
+    "RulesFilter_CouncilZoningTypeID": 12,
+    "ParentRuleFilterID": null
+  },
+  {
+    "PrimaryKey": 21,
+    "FilterType_GeneralLookUpID": 177,
+    "RulesFilter_CouncilZoningTypeID": 12,
+    "ParentRuleFilterID": 20
+  },
+  {
+    "PrimaryKey": 22,
+    "FilterType_GeneralLookUpID": 175,
+    "RulesFilter_CouncilZoningTypeID": 12,
+    "ParentRuleFilterID": null
+  },
+  {
+    "PrimaryKey": 23,
+    "FilterType_GeneralLookUpID": 172,
+    "RulesFilter_CouncilZoningTypeID": 12,
+    "ParentRuleFilterID": null
+  },
+  {
+    "PrimaryKey": 24,
+    "FilterType_GeneralLookUpID": 181,
+    "RulesFilter_CouncilZoningTypeID": 12,
+    "ParentRuleFilterID": null
+  },
+  {
+    "PrimaryKey": 25,
+    "FilterType_GeneralLookUpID": 173,
+    "RulesFilter_CouncilZoningTypeID": 12,
+    "ParentRuleFilterID": null
+  },
+  {
+    "PrimaryKey": 26,
+    "FilterType_GeneralLookUpID": 174,
+    "RulesFilter_CouncilZoningTypeID": 12,
+    "ParentRuleFilterID": 25
+  },
+  {
+    "PrimaryKey": 27,
+    "FilterType_GeneralLookUpID": 182,
+    "RulesFilter_CouncilZoningTypeID": 8,
+    "ParentRuleFilterID": null
+  },
+  {
+    "PrimaryKey": 28,
+    "FilterType_GeneralLookUpID": 183,
+    "RulesFilter_CouncilZoningTypeID": 8,
+    "ParentRuleFilterID": null
+  },
+  {
+    "PrimaryKey": 29,
+    "FilterType_GeneralLookUpID": 184,
+    "RulesFilter_CouncilZoningTypeID": 8,
+    "ParentRuleFilterID": null
+  }
+]
