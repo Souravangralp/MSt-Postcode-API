@@ -1,6 +1,6 @@
 ﻿namespace MSt_Postcode_API.Application.Common.Interfaces;
 
-public interface ISeedPostcodeSuburbService
+public interface ISeedPostcodeService
 {
     Task<List<Suburb>> GetSuburbs(string fileName, string SheetName);
 

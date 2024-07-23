@@ -1,6 +1,6 @@
 ﻿namespace MSt_Postcode_API.Infrastructure.Services;
 
-public class SeedPostcodeSuburbService : ISeedPostcodeSuburbService
+public class SeedPostcodeService : ISeedPostcodeService
 {
     #region Fields
 

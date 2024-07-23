@@ -16,5 +16,8 @@ global using MSt_Postcode_API.Application.Common.Models;
 global using MSt_Postcode_API.Domain.Constants;
 global using MSt_Postcode_API.Application.Common.Interfaces;
 global using MSt_Postcode_API.Application.Common.Behaviours;
+global using MSt_Postcode_API.Application.Postcodes.Commands.UpdatePostcodeClassification;
+global using MSt_Postcode_API.Domain.Enums;
+global using MSt_Postcode_API.Application.Common.Utility;
 
 

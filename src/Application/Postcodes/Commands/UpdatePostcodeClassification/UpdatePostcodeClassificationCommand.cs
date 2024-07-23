@@ -30,56 +30,23 @@ public class UpdatePostcodeClassificationCommandHandler : IRequestHandler<Update
 
     public async Task<bool> Handle(UpdatePostcodeClassificationCommand request, CancellationToken cancellationToken)
     {
-        List<int> classificationIds = [];
+        var postcode = await _context.Postcodes.Where(code => code.Code.Trim().ToLower() == request.Postcode.Trim().ToLower())
+                .FirstOrDefaultAsync(cancellationToken) ?? throw new NotFoundException(request.Postcode, nameof(Postcode));
 
-        await GetPostcodeClassificationIDs(request, classificationIds);
-
-        var postcode = await GetPostcode(request.Postcode);
+        List<int> classificationIds = await GetPostcodeClassificationIDs(request);
 
         return await UpdateClassifications(postcode.ID, classificationIds, cancellationToken);
     }
 
     #region Helpers
 
-    private async Task<List<int>> GetPostcodeClassificationIDs(UpdatePostcodeClassificationCommand request, List<int> classificationIds)
+    private async Task<List<int>> GetPostcodeClassificationIDs(UpdatePostcodeClassificationCommand request)
     {
         var classifications = await _context.PostcodeClassifications.ToListAsync();
 
-        if (classifications.Any())
-        {
-            GetProductClassification(request, classificationIds, classifications);
-        }
-
-        return classificationIds;
-    }
-
-    private static void GetProductClassification(UpdatePostcodeClassificationCommand request, List<int> classificationIds, List<PostcodeClassification> classifications)
-    {
-        foreach (var classification in classifications)
-        {
-            if (request.HighSecurity is not null && request.HighSecurity.Any())
-            {
-                foreach (var highSecurity in request.HighSecurity)
-                {
-                    if (classification.Value.Replace(" ", "").ToLower() == highSecurity.Replace(" ", "").ToLower())
-                    {
-                        classificationIds.Add(classification.ID);
-                    }
-                }
-            }
-
-            if (classification.Value.Replace(" ", "").ToLower() == request.PCCategory.Replace(" ", "").ToLower() ||
-                       classification.Value.Replace(" ", "").ToLower() == request.StandardAndPoor.Replace(" ", "").ToLower())
-            {
-                classificationIds.Add(classification.ID);
-            }
-        }
-    }
-
-    private async Task<Postcode> GetPostcode(string postcode)
-    {
-        return await _context.Postcodes.Where(code => code.Code.Replace(" ", "").ToLower() == postcode.Replace(" ", "").ToLower())
-                .FirstOrDefaultAsync() ?? throw new NotFoundException(postcode, nameof(postcode));
+        return classifications.Any() 
+            ? PostcodeUtility.GetClassification(request, classifications) 
+            : [];
     }
 
     private async Task<bool> UpdateClassifications(int postcodeID, List<int> classificationIds, CancellationToken cancellationToken)
