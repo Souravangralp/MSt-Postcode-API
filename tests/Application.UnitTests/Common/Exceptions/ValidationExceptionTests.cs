@@ -1,7 +1,5 @@
-﻿using MSt_Postcode_API.Application.Common.Exceptions;
-using FluentAssertions;
-using FluentValidation.Results;
-using NUnit.Framework;
+﻿using FluentValidation.Results;
+using MSt_Postcode_API.Application.Common.Exceptions;
 
 namespace MSt_Postcode_API.Application.UnitTests.Common.Exceptions;
 
