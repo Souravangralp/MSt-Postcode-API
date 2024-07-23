@@ -1,1 +1,22 @@
 ﻿global using Ardalis.GuardClauses;
+global using Microsoft.EntityFrameworkCore;
+global using MSt_Postcode_API.Application.Common.Interfaces;
+global using MSt_Postcode_API.Domain.Entities;
+global using MSt_Postcode_API.Domain.Entities.Mappers;
+global using System.Reflection;
+global using MSt_Postcode_API.Application.Common.Extensions;
+global using MSt_Postcode_API.Application.Common.Utility;
+global using MSt_Postcode_API.Infrastructure.Data;
+global using Newtonsoft.Json;
+global using OfficeOpenXml;
+global using MSt_Postcode_API.Application.Common.Models;
+global using MSt_Postcode_API.Domain.Entities.Generals;
+global using Microsoft.AspNetCore.Builder;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Logging;
+global using MSt_Postcode_API.Domain.Constants;
+global using Microsoft.AspNetCore.Identity;
+global using Microsoft.EntityFrameworkCore.Diagnostics;
+global using Microsoft.Extensions.Configuration;
+global using MSt_Postcode_API.Infrastructure.Data.Interceptors;
+

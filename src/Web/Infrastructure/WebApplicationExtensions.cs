@@ -1,15 +1,12 @@
-﻿using System.Reflection;
-
-namespace MSt_Postcode_API.Web.Infrastructure;
+﻿namespace MSt_Postcode_API.Web.Infrastructure;
 
 public static class WebApplicationExtensions
 {
     public static RouteGroupBuilder MapGroup(this WebApplication app, EndpointGroupBase group)
     {
         var groupName = group.GetType().Name;
-
         return app
-            .MapGroup($"/api/{groupName}")
+            .MapGroup($"/api/{groupName.ToLower()}")
             .WithGroupName(groupName)
             .WithTags(groupName)
             .WithOpenApi();

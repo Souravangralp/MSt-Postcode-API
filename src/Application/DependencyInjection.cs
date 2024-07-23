@@ -1,7 +1,4 @@
-﻿using System.Reflection;
-using MSt_Postcode_API.Application.Common.Behaviours;
-
-namespace Microsoft.Extensions.DependencyInjection;
+﻿namespace Microsoft.Extensions.DependencyInjection;
 
 public static class DependencyInjection
 {

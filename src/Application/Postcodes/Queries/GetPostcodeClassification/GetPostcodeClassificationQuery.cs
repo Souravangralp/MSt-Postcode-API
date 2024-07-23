@@ -1,9 +1,4 @@
-﻿using MSt_Postcode_API.Application.Common.Interfaces;
-using MSt_Postcode_API.Application.Common.Models;
-using MSt_Postcode_API.Domain.Constants;
-using MSt_Postcode_API.Domain.Entities;
-
-namespace MSt_Postcode_API.Application.Postcodes.Queries.GetPostcodeClassification;
+﻿namespace MSt_Postcode_API.Application.Postcodes.Queries.GetPostcodeClassification;
 
 public record GetPostcodeClassificationQuery : IRequest<PostcodeResult>
 {

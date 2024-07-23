@@ -1,6 +1,4 @@
-﻿using MSt_Postcode_API.Domain.Constants;
-
-namespace MSt_Postcode_API.Application.Common.Utility;
+﻿namespace MSt_Postcode_API.Application.Common.Utility;
 
 public static class FilesUtility
 {

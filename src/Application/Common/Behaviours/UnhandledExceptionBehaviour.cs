@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-
-namespace MSt_Postcode_API.Application.Common.Behaviours;
+﻿namespace MSt_Postcode_API.Application.Common.Behaviours;
 
 public class UnhandledExceptionBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : notnull
 {

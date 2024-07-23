@@ -1,7 +1,4 @@
-﻿using MediatR.Pipeline;
-using Microsoft.Extensions.Logging;
-
-namespace MSt_Postcode_API.Application.Common.Behaviours;
+﻿namespace MSt_Postcode_API.Application.Common.Behaviours;
 
 public class LoggingBehaviour<TRequest> : IRequestPreProcessor<TRequest> where TRequest : notnull
 {

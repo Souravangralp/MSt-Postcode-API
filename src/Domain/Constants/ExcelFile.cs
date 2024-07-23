@@ -1,6 +1,4 @@
-﻿using MSt_Postcode_API.Domain.Entities.Generals;
-
-namespace MSt_Postcode_API.Domain.Constants;
+﻿namespace MSt_Postcode_API.Domain.Constants;
 
 public record ExcelFile(string FileName)
 {

@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace MSt_Postcode_API.Domain.Entities;
+﻿namespace MSt_Postcode_API.Domain.Entities;
 
 public class State : BaseAuditableEntity
 {

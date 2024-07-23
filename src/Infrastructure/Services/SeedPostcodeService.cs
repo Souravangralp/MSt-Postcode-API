@@ -1,9 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using MSt_Postcode_API.Application.Common.Interfaces;
-using MSt_Postcode_API.Domain.Entities;
-using MSt_Postcode_API.Domain.Entities.Mappers;
-
-namespace MSt_Postcode_API.Infrastructure.Services;
+﻿namespace MSt_Postcode_API.Infrastructure.Services;
 
 public class SeedPostcodeSuburbService : ISeedPostcodeSuburbService
 {

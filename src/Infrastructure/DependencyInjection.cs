@@ -1,14 +1,4 @@
-﻿using System.Reflection;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Diagnostics;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using MSt_Postcode_API.Application.Common.Interfaces;
-using MSt_Postcode_API.Infrastructure.Data;
-using MSt_Postcode_API.Infrastructure.Data.Interceptors;
-
-namespace MSt_Postcode_API.Infrastructure;
+﻿namespace MSt_Postcode_API.Infrastructure;
 
 public static class DependencyInjection
 {

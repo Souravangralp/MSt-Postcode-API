@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace MSt_Postcode_API.Web.Infrastructure;
+﻿namespace MSt_Postcode_API.Web.Infrastructure;
 
 public static class IEndpointRouteBuilderExtensions
 {

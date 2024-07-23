@@ -1,8 +1,4 @@
-﻿using System.Diagnostics;
-using MSt_Postcode_API.Application.Common.Interfaces;
-using Microsoft.Extensions.Logging;
-
-namespace MSt_Postcode_API.Application.Common.Behaviours;
+﻿namespace MSt_Postcode_API.Application.Common.Behaviours;
 
 public class PerformanceBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : notnull
 {

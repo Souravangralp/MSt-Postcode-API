@@ -1,10 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using MSt_Postcode_API.Application.Common.Models;
-using MSt_Postcode_API.Application.Postcodes.Commands.UpdatePostcodeClassification;
-using MSt_Postcode_API.Application.Postcodes.Queries.GetPostcodeClassification;
-using NSwag.Annotations;
-
-namespace MSt_Postcode_API.Web.Endpoints;
+﻿namespace MSt_Postcode_API.Web.Endpoints;
 
 public class Postcodes : EndpointGroupBase
 {
@@ -12,8 +6,8 @@ public class Postcodes : EndpointGroupBase
     {
         app.MapGroup(this)
             .AllowAnonymous()
-            .MapGet(GetPostcodeClassificationQuery, "Get postcode classifications")
-            .MapPut(UpdatePostcodeClassification, "Update postcode classifications");
+            .MapGet(GetPostcodeClassificationQuery, "classifications")
+            .MapPut(UpdatePostcodeClassification, "classifications");
     }
 
     [OpenApiOperation("Get location category by postcode and state", "Get location category by postcode and state or territory name.")]

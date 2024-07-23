@@ -1,10 +1,4 @@
-﻿using Azure.Identity;
-using Microsoft.AspNetCore.Mvc;
-using MSt_Postcode_API.Infrastructure.Data;
-using NSwag;
-using NSwag.Generation.Processors.Security;
-
-namespace Microsoft.Extensions.DependencyInjection;
+﻿namespace Microsoft.Extensions.DependencyInjection;
 
 public static class DependencyInjection
 {
@@ -29,7 +23,7 @@ public static class DependencyInjection
 
         services.AddOpenApiDocument((configure, sp) =>
         {
-            configure.Title = "MSt_Postcode_API API";
+            configure.Title = "MSt_Postcode API";
 
             // Add JWT
             configure.AddSecurity("JWT", Enumerable.Empty<string>(), new OpenApiSecurityScheme

@@ -1,6 +1,4 @@
-﻿using MSt_Postcode_API.Domain.Entities;
-
-namespace MSt_Postcode_API.Domain.Entities.Mappers;
+﻿namespace MSt_Postcode_API.Domain.Entities.Mappers;
 
 public class PostcodeClassificationMapper : BaseAuditableEntity
 {

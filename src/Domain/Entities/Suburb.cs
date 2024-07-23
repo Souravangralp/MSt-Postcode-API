@@ -1,6 +1,4 @@
-﻿using MSt_Postcode_API.Domain.Entities.Generals;
-
-namespace MSt_Postcode_API.Domain.Entities;
+﻿namespace MSt_Postcode_API.Domain.Entities;
 
 public class Suburb : BaseAuditableEntity
 {

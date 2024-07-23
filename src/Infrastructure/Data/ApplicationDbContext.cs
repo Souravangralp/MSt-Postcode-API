@@ -1,11 +1,4 @@
-﻿using System.Reflection;
-using Microsoft.EntityFrameworkCore;
-using MSt_Postcode_API.Application.Common.Interfaces;
-using MSt_Postcode_API.Domain.Entities;
-using MSt_Postcode_API.Domain.Entities.Generals;
-using MSt_Postcode_API.Domain.Entities.Mappers;
-
-namespace MSt_Postcode_API.Infrastructure.Data;
+﻿namespace MSt_Postcode_API.Infrastructure.Data;
 
 public class ApplicationDbContext : DbContext, IApplicationDbContext
 {

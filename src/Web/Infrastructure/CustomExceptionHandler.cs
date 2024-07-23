@@ -1,8 +1,4 @@
-﻿using MSt_Postcode_API.Application.Common.Exceptions;
-using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
-
-namespace MSt_Postcode_API.Web.Infrastructure;
+﻿namespace MSt_Postcode_API.Web.Infrastructure;
 
 public class CustomExceptionHandler : IExceptionHandler
 {

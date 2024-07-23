@@ -1,6 +1,4 @@
-﻿using MSt_Postcode_API.Application.Common.Models;
-
-namespace MSt_Postcode_API.Application.Common.Mappings;
+﻿namespace MSt_Postcode_API.Application.Common.Mappings;
 
 public static class MappingExtensions
 {

@@ -1,6 +1,4 @@
-﻿using FluentValidation.Results;
-
-namespace MSt_Postcode_API.Application.Common.Exceptions;
+﻿namespace MSt_Postcode_API.Application.Common.Exceptions;
 
 public class ValidationException : Exception
 {

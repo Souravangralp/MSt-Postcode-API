@@ -1,5 +1,4 @@
-﻿using MSt_Postcode_API.Application.Common.Models;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 
 namespace MSt_Postcode_API.Infrastructure.Identity;
 

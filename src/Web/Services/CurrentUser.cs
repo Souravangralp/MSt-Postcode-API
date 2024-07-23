@@ -1,6 +1,4 @@
-﻿using System.Security.Claims;
-
-namespace MSt_Postcode_API.Web.Services;
+﻿namespace MSt_Postcode_API.Web.Services;
 
 public class CurrentUser
 {
