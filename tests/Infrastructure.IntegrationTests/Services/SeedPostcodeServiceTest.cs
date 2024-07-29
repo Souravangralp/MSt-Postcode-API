@@ -1,19 +1,16 @@
-﻿using FluentAssertions;
-using MSt_Postcode_API.Application.Common.Interfaces;
+﻿namespace MSt_Postcode_API.Infrastructure.IntegrationTests.Services;
 
-namespace MSt_Postcode_API.Infrastructure.IntegrationTests.Services;
-
-public class SeedPostcodeSuburbServiceTest
+public class SeedPostcodeServiceTest
 {
     #region Fields
 
-    private readonly SeedPostcodeSuburbService _seedPostcodeSuburbService;
+    private readonly SeedPostcodeService _seedPostcodeServiceTest;
 
     #endregion
 
     #region Ctor
 
-    public SeedPostcodeSuburbServiceTest()
+    public SeedPostcodeServiceTest()
     {
         var mockContext = new Mock<IApplicationDbContext>();
         var mockExcelFileService = new Mock<IExcelFileService>();
@@ -24,7 +21,7 @@ public class SeedPostcodeSuburbServiceTest
         mockExcelFileService.Setup(c => c.GetExcelData<SuburbDetail>("Postcode.xlsx", "PostcodeClassificationMapper")).ReturnsAsync(new List<SuburbDetail>(){
             new(){ ID = 1, Postcode = "0001", Suburb = "Sydney", StateCode = "ACT" }});
 
-        _seedPostcodeSuburbService = new(context: mockContext.Object, excelFileService: mockExcelFileService.Object);
+        _seedPostcodeServiceTest = new(context: mockContext.Object, excelFileService: mockExcelFileService.Object);
     }
 
     #endregion
@@ -38,7 +35,7 @@ public class SeedPostcodeSuburbServiceTest
         ArrangeRequiredParameter(out string fileName, out string sheetName, isValidData: true);
 
         //Act
-        var result = await _seedPostcodeSuburbService.GetSuburbs(fileName, sheetName);
+        var result = await _seedPostcodeServiceTest.GetSuburbs(fileName, sheetName);
 
         //Assert
         result.Should().NotBeNullOrEmpty();
@@ -53,7 +50,7 @@ public class SeedPostcodeSuburbServiceTest
         bool isExceptionThrown = false;
 
         //Act
-        try { await _seedPostcodeSuburbService.GetSuburbs(fileName, sheetName); }
+        try { await _seedPostcodeServiceTest.GetSuburbs(fileName, sheetName); }
         catch (Exception) { isExceptionThrown = true; }
 
         //Assert
@@ -67,7 +64,7 @@ public class SeedPostcodeSuburbServiceTest
         ArrangeRequiredParameter(out string fileName, out string sheetName, isValidData: true);
 
         //Act
-        var result = await _seedPostcodeSuburbService.GetPostcodeSuburbMapper(fileName, sheetName);
+        var result = await _seedPostcodeServiceTest.GetPostcodeSuburbMapper(fileName, sheetName);
 
         //Assert
         result.Should().NotBeNullOrEmpty();
@@ -82,7 +79,7 @@ public class SeedPostcodeSuburbServiceTest
         bool isExceptionThrown = false;
 
         //Act
-        try { await _seedPostcodeSuburbService.GetPostcodeSuburbMapper(fileName, sheetName); }
+        try { await _seedPostcodeServiceTest.GetPostcodeSuburbMapper(fileName, sheetName); }
         catch (Exception) { isExceptionThrown = true; }
 
         //Assert
@@ -93,7 +90,7 @@ public class SeedPostcodeSuburbServiceTest
     public async Task GetGetPostcodes_ShouldReturnExpectedResult()
     {
         //Act
-        var result = await _seedPostcodeSuburbService.GetPostcodes();
+        var result = await _seedPostcodeServiceTest.GetPostcodes();
 
         //Assert
         Assert.That(result.Count, Is.EqualTo(10001));
@@ -103,7 +100,7 @@ public class SeedPostcodeSuburbServiceTest
     public async Task GetGetPostcodes_ShouldReturnUnExpectedResult()
     {
         //Act
-        var result = await _seedPostcodeSuburbService.GetPostcodes();
+        var result = await _seedPostcodeServiceTest.GetPostcodes();
 
         //Assert
         Assert.That(result.Count, !Is.EqualTo(1000));

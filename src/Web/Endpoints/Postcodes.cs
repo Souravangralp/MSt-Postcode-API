@@ -6,11 +6,11 @@ public class Postcodes : EndpointGroupBase
     {
         app.MapGroup(this)
             .AllowAnonymous()
-            .MapGet(GetPostcodeClassificationQuery, "classifications")
+            .MapGet(GetPostcodeClassificationQuery, "classification")
             .MapPut(UpdatePostcodeClassification, "classifications");
     }
 
-    [OpenApiOperation("Get location category by postcode and state", "Get location category by postcode and state or territory name.")]
+    [OpenApiOperation("Get location classification by postcode and state", "Get location classification by postcode and state or territory name.")]
     public async Task<PostcodeResult> GetPostcodeClassificationQuery(ISender sender, [AsParameters] GetPostcodeClassificationQuery query)
     {
         return await sender.Send(query);

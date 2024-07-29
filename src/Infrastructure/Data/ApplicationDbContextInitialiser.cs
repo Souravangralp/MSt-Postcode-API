@@ -1,4 +1,6 @@
-﻿namespace MSt_Postcode_API.Infrastructure.Data;
+﻿using MSt_Postcode_API.Infrastructure.Services;
+
+namespace MSt_Postcode_API.Infrastructure.Data;
 
 public static class InitialiserExtensions
 {
@@ -20,7 +22,7 @@ public class ApplicationDbContextInitialiser
 
     private readonly ILogger<ApplicationDbContextInitialiser> _logger;
     private readonly ApplicationDbContext _context;
-    private readonly ISeedPostcodeSuburbService _seedPostcodeSuburbService;
+    private readonly ISeedPostcodeService _seedPostcodeService;
     private readonly ISeedPostcodeClassificationService _seedPostcodeClassificationService;
     private readonly IExcelFileService _excelFileService;
 
@@ -30,13 +32,13 @@ public class ApplicationDbContextInitialiser
 
     public ApplicationDbContextInitialiser(ILogger<ApplicationDbContextInitialiser> logger,
         ApplicationDbContext context,
-        ISeedPostcodeSuburbService seedPostcodeSuburbService,
+        ISeedPostcodeService seedPostcodeService,
         ISeedPostcodeClassificationService seedPostcodeClassificationService,
         IExcelFileService excelFileService)
     {
         _logger = logger;
         _context = context;
-        _seedPostcodeSuburbService = seedPostcodeSuburbService;
+        _seedPostcodeService = seedPostcodeService;
         _seedPostcodeClassificationService = seedPostcodeClassificationService;
         _excelFileService = excelFileService;
     }
@@ -98,7 +100,7 @@ public class ApplicationDbContextInitialiser
     {
         if (!_context.Postcodes.Any())
         {
-            var postcodes = await _seedPostcodeSuburbService.GetPostcodes();
+            var postcodes = await _seedPostcodeService.GetPostcodes();
 
             await _context.Postcodes.AddRangeAsync(postcodes);
 
@@ -110,7 +112,7 @@ public class ApplicationDbContextInitialiser
     {
         if (!_context.Suburbs.Any())
         {
-            var suburbs = await _seedPostcodeSuburbService.GetSuburbs(ExcelFile.Postcode.FileName, ExcelSheetName.Suburbs.SheetName);
+            var suburbs = await _seedPostcodeService.GetSuburbs(ExcelFile.Postcode.FileName, ExcelSheetName.Suburbs.SheetName);
 
             await _context.Suburbs.AddRangeAsync(suburbs);
 
@@ -122,7 +124,7 @@ public class ApplicationDbContextInitialiser
     {
         if (!_context.PostcodeSuburbMapper.Any())
         {
-            var postcodeSuburbMapper = await _seedPostcodeSuburbService.GetPostcodeSuburbMapper(ExcelFile.Postcode.FileName, ExcelSheetName.Suburbs.SheetName);
+            var postcodeSuburbMapper = await _seedPostcodeService.GetPostcodeSuburbMapper(ExcelFile.Postcode.FileName, ExcelSheetName.Suburbs.SheetName);
 
             await _context.PostcodeSuburbMapper.AddRangeAsync(postcodeSuburbMapper);
 

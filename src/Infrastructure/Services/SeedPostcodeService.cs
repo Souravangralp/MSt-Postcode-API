@@ -11,7 +11,7 @@ public class SeedPostcodeService : ISeedPostcodeService
 
     #region Ctor
 
-    public SeedPostcodeSuburbService(
+    public SeedPostcodeService(
         IApplicationDbContext context,
         IExcelFileService excelFileService)
     {

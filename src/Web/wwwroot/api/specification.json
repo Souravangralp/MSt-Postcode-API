@@ -6,13 +6,13 @@
     "version": "1.0.0"
   },
   "paths": {
-    "/api/postcodes/classifications": {
+    "/api/postcodes/classification": {
       "get": {
         "tags": [
           "Postcodes"
         ],
-        "summary": "Get location category by postcode and state",
-        "description": "Get location category by postcode and state or territory name.",
+        "summary": "Get location classification by postcode and state",
+        "description": "Get location classification by postcode and state or territory name.",
         "operationId": "GetPostcodeClassificationQuery",
         "parameters": [
           {
@@ -58,7 +58,9 @@
             }
           }
         }
-      },
+      }
+    },
+    "/api/postcodes/classifications": {
       "put": {
         "tags": [
           "Postcodes"
